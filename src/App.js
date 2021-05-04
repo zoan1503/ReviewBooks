@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './MainHeader.jsx'
-import MainHeader from './MainHeader.jsx';
-import Header from './Header.jsx';
-import SideBar from './SideBar';
-function App(props) {
-    const [count, setCount] = useState(0);
+// App.js
+
+import React, { Component } from 'react';
+import Layout from './layout/Layout';
+
+class App extends Component {
+
+  render() {
     return (
-        <div>
-            <Header></Header>
-            <SideBar></SideBar>
-        </div>
+      <div>
+       <Layout />
+      </div>
     );
+  }
 }
 
 export default App;
