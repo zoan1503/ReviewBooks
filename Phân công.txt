@@ -1,0 +1,22 @@
+* Dương Đăng Quang: 
+- Tạo menu, sidebar
+- Tạo giao diện viết đánh giá
+- Xử lý tương tác (like, dislike, report)
+
+* Vũ Duy Anh:
+- Crawl dữ liệu sách 
+- Tạo database
+- Quản lý các thông tin cá nhân
+
+* Lê Thị Mai Hương
+- Tạo giao diện sách
+- Sắp xếp sách theo các tiêu chí
+- Tìm kiếm sách
+
+* Nguyễn Thị Duyên
+- Tạo giao diện thông tin cá nhân
+- Tạo giao diện đăng nhập/ đăng ký
+- Xử lý đăng nhập
+
+* Nguyễn Đình Đức
+- Quản lý server
