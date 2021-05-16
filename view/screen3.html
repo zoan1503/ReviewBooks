@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen3</title>
+    <link type="text/css" rel="stylesheet" href="screen3_style.css" />
+    <link type="text/css" rel="stylesheet" href="normalize.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link type="text/css" rel="stylesheet" href="right.css" />
+    <style>
+        .staticStars {
+            width: 75px;
+            height: 15px;
+            font-size: 0;
+            background-repeat: no-repeat;
+            white-space: nowrap;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .staticStar.p10 {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABvUlEQVR4Ab2WNZDXQBTGcWtxd+173PYFh5bJ5uBK3B0q3N3d3RvkoMalb6hw6DY5yQ8np5v8s5l5sfe+7zezXi/tVa7HDSDqub5CX60knIONlleEU2h58Zh+xlflBO/umlmrZb/BvDsDx8AXv8G8u2nm6RP6APw3+OdgNMuSJJh/DppZniXB/Mu3mYvG9gJUVZDLr5kDtag6MDkrsyjwpka+bI+07DVaDhnfO260OhtquRRqdSN+3o3jfhyP4++P1YHJUUMtGrR44IUn3jBgwWQxaGF8OYPYRcCC+U8zytzQlygvIN4wqu7DIm9oXPAhB+gHvGsZuaqr0eppoaB44Vm3aTN7SnOj5URWKB542S8WgcwKtQptgWjQZlwixw63BaPJvmhM8wbZgtEUYu9dZwtGU5gjjiU465GIk2TntCMabWqwCaS4OuMokF1EdXm0GfpXrlaxCn2KAm/C7xre+ZesQ5uumVdNaRKLvyfMHlfVhPwjl6j9joc1mLX1H5PS0Jc15eenNKyunhw11P7W4ZFm09/0C/rOZl5SiwYtHmmm0Vs283jvbGWrRYMWD0vhxPbG92bWy3jhgVdVuQp3XI5mu1kSTwAAAABJRU5ErkJggg==);
+            background-size: 15px;
+        }
+
+        .staticStar,
+        .staticStar_flat,
+        .staticStar_flat_orange {
+            width: 15px;
+            height: 15px;
+            float: left;
+            background-repeat: no-repeat;
+            font-size: 0;
+        }
+
+        .readMoreLink {
+            margin-top: 13px;
+            float: right;
+        }
+
+        .profilePicture {
+            float: left;
+            width: 150px;
+            margin-right: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+
+        }
+
+        .profilePictureIcon {
+            object-fit: cover;
+            box-sizing: border-box;
+            border-radius: 76px;
+            height: 150px;
+            width: 150px;
+        }
+
+        .userInfo {
+            float: left;
+            background-repeat: no-repeat;
+            font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin-left: 40px;
+        }
+
+        .userName {
+            border-bottom: 1px solid #d8d8d8;
+            float: left;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 1.3;
+            margin: 0;
+            margin-bottom: 5px;
+            padding: 4px 0 4px 0;
+
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .infoTitle {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #382110;
+            font-weight: bold;
+            width: 25%;
+            float: left;
+            margin: 1px 0px;
+            width: 40%;
+        }
+
+        .infoItem {
+            float: left;
+            width: 40%;
+            margin: 1px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="tablink" onclick="openPage('thongTinCaNhan', this, '#EDEDE3')">Thông tin cá nhân</button>
+        <button class="tablink" onclick="openPage('lichSuTuongTac', this, '#EDEDE3')" id="defaultOpen">Lịch sử tương
+            tác</button>
+        <button class="tablink" onclick="openPage('sachDaReview', this, '#EDEDE3')">Sách đã review</button>
+
+        <div id="thongTinCaNhan" class="tabContent" style="margin-top: 20px;">
+            <div class="profilePicture">
+                <a href="#">
+                    <img width="150" class="profilePictureIcon "
+                        src="https://s.gr-assets.com/assets/nophoto/user/f_225x300-9aa43f0ccc0355209c834d010c65a83b.png">
+                </a>
+                <div class="statsInfo" style="text-align: center;">
+                    <a style="color: #00635d;  text-decoration: none;" href="#">1 ratings</a> <br>
+                    <a style="color: #00635d;  text-decoration: none;" href="#">1 review</a> <br>
+                    <a style="color: #00635d;  text-decoration: none;" href="#">more photos</a> <br>
+                </div>
+            </div>
+            <div class="userInfo">
+                <h1 class="userName">Name</h1>
+                <div class="infoTitle">Age</div>
+                <div class="infoItem">21</div>
+                <div class="infoTitle">Birthday</div>
+                <div class="infoItem">30/10/1999</div>
+                <div class="infoTitle">Gender</div>
+                <div class="infoItem">Female</div>
+                <div class="infoTitle">Email</div>
+                <div class="infoItem">123@gmail.com</div>
+                <div class="infoTitle">Address</div>
+                <div class="infoItem">Hanoi</div>
+                <div class="infoTitle">Activity</div>
+                <div class="infoItem">joined in March 2021, last active this month</div>
+
+
+            </div>
+            <!-- <div>
+                <div>
+                    Họ tên: ........
+                </div>
+                <div>
+                    Ngay sinh: ........
+                </div>
+                <div>
+                    Email: ...............
+                </div>
+                <div>
+                    So sach da review: ............
+                </div>
+            </div> -->
+
+            <div
+                style="text-align: right; font-size: 15px; font-weight: bold;position: absolute; bottom: 8px; right: 16px;">
+                <a href="#"> Chinh sua thong tin ca nhan</a>
+            </div>
+
+        </div>
+
+        <div id="lichSuTuongTac" class="tabContent">
+            <div style="border-bottom: 1px solid #d7d7d7;">
+                Những cập nhật gần đây
+            </div>
+            <div class="content">
+                <ul>
+                    <li class="detail" style="border-bottom: 1px solid #d7d7d7;height: 120px;">
+                        <div class="_text" style="width: 100%; ">
+                            <strong>
+                                <a href=#>....</a></strong>
+                            đã đánh giá một cuốn sách
+                            <span class="staticStars"> Hiển thị số sao
+                                <span size="15x15" class="staticStar p10">it was amazing</span>
+                                <span size="15x15" class="staticStar p10"></span>
+                                <span size="15x15" class="staticStar p10"></span>
+                                <span size="15x15" class="staticStar p10"></span>
+                                <span size="15x15" class="staticStar p10"></span>
+                            </span>
+                        </div>
+                        <div class="bookRated" style="width: 100%;height: 70px;">
+
+                            <div class="image" style="float: left; margin-right: 10px; ">
+                                <a href="#">
+                                    <img src="image/book2.png" style="max-height: 75px;
+                                overflow: hidden;
+                                width: 50px;">
+                                </a>
+                            </div>
+                            <div class="afterImage" style=" float: left;
+                            width: 320px;
+                            margin-top: 1px;">
+                                <a href="#">Những người khốn khổ</a>
+                                <br>
+                                by
+                                <a href=#>Victor Hugo</a>
+                            </div>
+                            <!-- <div class="wrapperButton column2" style="float:right">
+                                <div class="readButton">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">Want to
+                                            read
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Want to read</a></li>
+                                            <li><a href="#">Currently read</a></li>
+                                            <li><a href="#">Read</a></li>
+                                            <hr style="margin-top: 5px; margin-bottom: 5px;">
+                                            <div style="padding-left: 5px;">Add New Shelf</div>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+
+                            </div> -->
+                        </div>
+                        <div class="time" style="float: left;padding-left: 0; width: 100%;">
+                            <a ref="timestamp" href="#">1 giờ trước</a>
+                            &nbsp; . &nbsp;
+                            <a class="cmt" href="#">bình luận</a>
+
+                        </div>
+
+
+                    </li>
+                    <li class="detail" style="border-bottom: 1px solid #d7d7d7;height: 120px;">
+                        <div class="_text" style="width: 100%; margin-top: 10px;">
+                            <strong>
+                                <a href=#>....</a></strong>
+                            đã thích đánh giá của
+                            <strong>
+                                <a href=#>....</a></strong>
+                            về
+                            <strong>
+                                <a href=#>....</a></strong>
+                        </div>
+                        <div class="bookRated" style="width: 100%;height: 70px;">
+
+                            <div class="image" style="float: left; margin-right: 10px; ">
+                                <a href="#">
+                                    <img src="image/book2.png" style="max-height: 75px;
+                                overflow: hidden;
+                                width: 50px;">
+                                </a>
+                            </div>
+                            <div class="afterImage" style=" margin-top: 1px;">
+                                <div class="reviewed">
+                                    <p>"Tác giả không chỉ chuyện mà còn thêm vào những bài học rất hay,
+                                        mình bị ấn tượng bởi một câu chuyện như thế này, ba mẹ buộc tội,
+                                        nhưng không nghĩ rằng những bài học đó cũng đang đánh giá chúng,
+                                        chúng tôi cần nó sự quan trọng của sự lắng nghe từ người lớn, người lớn "</p>
+                                    <a class="readMoreLink actionLink" href="#">Đọc thêm về đánh giá này</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="time" style="float: left;padding-left: 0; width: 100%;">
+                            <a ref="timestamp" href="#">1 giờ trước</a>
+                            &nbsp; . &nbsp;
+                            <a class="cmt" href="#">xem đánh giá</a>
+
+                        </div>
+
+
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+
+
+        <div id="sachDaReview" class=tabContent style="margin-top: 20px;">
+            <div>
+                Số sách đã review : <span id = "numberOfBook"></span>
+            </div>
+            <div class="bookreview" style="display: inline">
+                <div class="book" style=" width:40%; ">
+                    <div class="_left" style="float:left;width: 200px;">
+                        <div class="bookImage">
+
+                            <a>                            
+                                <img src="image/bookImage.png" style="width:170px;height:300px;margin-left:0px;" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="_right" style="margin-top: 10px;">
+                        <div style="font-size: 15px; color: blue; font-weight: bold;">
+                            The Midnight Library
+                        </div>
+
+                        <div style="color: grey;">
+                            <span>by Matt Haig</span>
+                            <span> (Goodreads Author)</span>
+                        </div>
+
+                        <div class="starRating">
+                            Chut nua se code
+                            Số sao đánh giá và thời gian đánh giá
+
+                        </div>
+
+                        <div class="descriptionBook">
+                            Between life and death there is a library, and within that library, the shelves go on
+                            forever. Every book provides a chance to try another life you could have lived. To see
+                            how
+                            things would be if you had made other choices . . . Would you have done anything
+                            different,
+                            if you had the chance to undo your regrets?”
+                            <a href="#" onclick="swapContent($(this));; return false;" style="color: #00635d;
+                                text-decoration: none;">...more</a>
+                        </div>
+                        <div class="book__likesAndReplies" style=' font-size: 14px;
+                        color: #767676;
+                        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+                    
+                        line-height: 1.15;
+                        padding-bottom: 12px;
+                        padding-top: 12px;'>
+                            <span>87 likes</span>
+                            <span>· </span>
+                            <span>19 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book" style=" width:40%">
+                    <div class="_left" style="float:left;width: 200px;">
+                        <div class="bookImage">
+                            <a>
+                                <img src="image/bookImage.png" style="width:170px;height:300px;margin-left:0px;" />
+
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="_right" style="margin-top: 10px;">
+                        <div style="font-size: 15px; color: blue; font-weight: bold;">
+                            The Midnight Library
+                        </div>
+
+                        <div style="color: grey;">
+                            <span>by Matt Haig</span>
+                            <span> (Goodreads Author)</span>
+                        </div>
+
+                        <div class="starRating">
+                            Chut nua se code
+                            Số sao đánh giá và thời gian đánh giá
+
+                        </div>
+
+                        <div class="descriptionBook">
+                            Between life and death there is a library, and within that library, the shelves go on
+                            forever. Every book provides a chance to try another life you could have lived. To see
+                            how
+                            things would be if you had made other choices . . . Would you have done anything
+                            different,
+                            if you had the chance to undo your regrets?”
+                            <a href="#" onclick="swapContent($(this));; return false;" style="color: #00635d;
+                                text-decoration: none;">...more</a>
+                        </div>
+                        <div class="book__likesAndReplies" style=' font-size: 14px;
+                        color: #767676;
+                        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+                    
+                        line-height: 1.15;
+                        padding-bottom: 12px;
+                        padding-top: 12px;'>
+                            <span>87 likes</span>
+                            <span>· </span>
+                            <span>19 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book" style=" width:40%">
+                    <div class="_left" style="float:left;width: 200px;">
+                        <div class="bookImage">
+                            <a><img src="image/bookImage.png" style="width:170px;height:300px;margin-left:0px;" />
+                            </a>
+
+
+                        </div>
+                    </div>
+                    <div class="_right" style="margin-top: 10px;">
+                        <div style="font-size: 15px; color: blue; font-weight: bold;">
+                            The Midnight Library
+                        </div>
+
+                        <div style="color: grey;">
+                            <span>by Matt Haig</span>
+                            <span> (Goodreads Author)</span>
+                        </div>
+
+                        <div class="starRating">
+                            Chut nua se code
+                            Số sao đánh giá và thời gian đánh giá
+
+                        </div>
+
+                        <div class="descriptionBook">
+                            Between life and death there is a library, and within that library, the shelves go on
+                            forever. Every book provides a chance to try another life you could have lived. To see
+                            how
+                            things would be if you had made other choices . . . Would you have done anything
+                            different,
+                            if you had the chance to undo your regrets?”
+                            <a href="#" onclick="swapContent($(this));; return false;" style="color: #00635d;
+                                text-decoration: none;">...more</a>
+                        </div>
+                        <div class="book__likesAndReplies" style=' font-size: 14px;
+                        color: #767676;
+                        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+                    
+                        line-height: 1.15;
+                        padding-bottom: 12px;
+                        padding-top: 12px;'>
+                            <span>87 likes</span>
+                            <span>· </span>
+                            <span>19 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabContent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].style.backgroundColor = "white"
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+                tablinks[i].style.color = "white";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+            elmnt.style.color = "#BE5C5C";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        
+        var numberOfBook = document.getElementsByClassName("book");
+        var i = numberOfBook.length;
+        document.getElementById("numberOfBook").innerHTML = i;
+
+        
+    </script>
+
+</body>
+
+</html>
