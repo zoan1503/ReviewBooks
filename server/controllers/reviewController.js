@@ -1,5 +1,3 @@
-const util = require('util')
-const mysql = require('mysql')
 const db = require('./database')
 
 module.exports = {
@@ -20,9 +18,18 @@ module.exports = {
 
         });
     },
-    getall: (req, res) => {
-        let sql = 'SELECT * FROM review'
-        db.query(sql, (err, response) => {
+    get_all_review_1user: (req, res) => {
+        let id_user = req.body.id_user;
+        let sql = 'SELECT * FROM review where id_user = ?'
+        db.query(sql, [id_user], (err, response) => {
+            if (err) throw err
+            res.json(response)
+        })
+    },
+    get_all_review_1book: (req, res) => {
+        let id_book = req.body.id_book;
+        let sql = 'SELECT * FROM review where id_book = ?'
+        db.query(sql, [id_book], (err, response) => {
             if (err) throw err
             res.json(response)
         })
