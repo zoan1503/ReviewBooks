@@ -9,10 +9,7 @@ var con = mysql.createConnection({
     password: "123321",
     database: 'reviewbook'
 });
-// router.use(cors({
-//     origin: 'http://localhost:4000',
-//     credentials: true
-// }))
+
 router.post('/', function (req, res) {
 
     const content_review = req.body.content_review;
