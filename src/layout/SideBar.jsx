@@ -33,62 +33,31 @@ export default class SideBar extends Component {
                                 <li className="text-white text-center">MENU</li>
                                 <div>
                                     <li className="nav-item has-treeview">
-                                        <a href="#abc" className="nav-link"> 
+                                        <a href="#" className="nav-link"> 
                                             <i className="nav-icon fa fa-users" />
-                                            <Link to='/reviewbook'>
+                                            {/* <span>Review Sách</span> */}
+                                            <Link to='/reviewbooks'>
                                                 <span>&nbsp;Review Sách</span>
                                             </Link>
-                                            <i className="right fa fa-angle-left"></i>
+                                            {/* <i className="right fa fa-angle-left"></i> */}
                                         </a>
-                                        <ul className="nav nav-treeview">
-                                            <li className="nav-item"><a href="/usermanager" className="nav-link">Quản lí sách của bạn</a></li>
-                                            <li className="nav-item"><a href="/studentsmanager" className="nav-link">Quản lí tài khoản</a></li>
-                                        </ul>
                                     </li>
 
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="nav-icon fa fa-copy"></i> <p>
-                                                Quản lí đầu sách
-                                    <i class="fa fa-angle-left right"></i>
-                                            </p>
+                                            <i class="nav-icon fa fa-copy"></i> 
+                                            <Link to='/booksmanager'>
+                                                <span>&nbsp;Quản lí sách</span>
+                                            </Link>
                                         </a>
-                                        <ul class="nav nav-treeview">
-
-                                            <li class="nav-item">
-                                                <a href="/subjectsmanager" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Quản lí sách văn học</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="/subjectmanager" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Quản lí sách khoa học</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="/classmanager" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Danh sách lớp học</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="/ternmanager" class="nav-link">
-                                                    <i class="far fa-circle nav-icon"></i>
-                                                    <p>Danh sách kỳ học</p>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
 
                                     <li className="nav-item has-treeview">
                                         <a href="#abc" className="nav-link">
-                                            <i className="nav-icon fa fa-calendar" /> <p>
-                                                Quản lý đăng ký
-                                    <i className="right fa fa-angle-left"></i>
-                                            </p>
-
+                                            <i className="nav-icon fa fa-calendar" /> 
+                                            <Link to='/usermanager'>
+                                                <span>&nbsp;Quản lý tài khoản</span>
+                                            </Link>
                                         </a>
                                         <ul className="nav nav-treeview">
                                             <li className="nav-item"><a href="/sessionmanager" className="nav-link">Quản lý phiên đăng ký</a></li>

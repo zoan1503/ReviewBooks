@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainHeader from './Header';
 import SideBar from './SideBar';
+import Content from './Content'
 // import Footer from './footer/components/footer';
 // import Content from './content';
 // import { connect } from 'react-redux';
@@ -15,8 +16,7 @@ class Layout extends Component {
             <React.Fragment>
                 <MainHeader/>
                 <SideBar />
-                {/* <Content arrPage={this.props.arrPage} isLoading={this.props.isLoading} pageName="Home">{ this.props.children }</Content> */}
-                {/* <Footer /> */}
+                <Content arrPage={this.props.arrPage} isLoading={this.props.isLoading} pageName="Home">{ this.props.children }</Content>
             </React.Fragment>
          );
     }
