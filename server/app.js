@@ -10,7 +10,8 @@ var usersRouter = require('./routes/users');
 var reviewRouter = require('./routes/review');
 var ratingRouter = require('./routes/rating');
 var reactionRouter = require('./routes/reaction');
-
+var signUpRouter = require('./routes/signup');
+var signInRouter = require('./routes/signin')
 var app = express();
 
 // view engine setup
@@ -29,7 +30,8 @@ app.use('/users', usersRouter);
 app.use('/review', reviewRouter);
 app.use('/rating', ratingRouter);
 app.use('/reaction', reactionRouter);
-
+app.use('/signup', signUpRouter);
+app.use('/signin', signInRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
