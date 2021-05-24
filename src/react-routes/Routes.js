@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import Login from '../modules/auth/components/login';
+import Login from '../modules/auth/components/login';
 // import Home from '../modules/home/index';
-import { PrivateRoute } from './CombineRoutes';
+import { PrivateRoute, AuthRoute } from './CombineRoutes';
 import Layout from '../layout/Layout';
 // import { UserManager } from '../modules/auth/components/UserManager';
 import ReviewBooks from '../modules/ReviewBooks'
@@ -34,7 +34,7 @@ export default class Routes extends Component {
         const { auth } = this.props;
         return (
             <React.Fragment>
-                {/* <AuthRoute auth={auth} exact path="/login" component={Login} /> */}
+                <AuthRoute auth={auth} exact path="/login" component={Login} />
                 {
                     privatePage.map(page => (
                         <PrivateRoute
