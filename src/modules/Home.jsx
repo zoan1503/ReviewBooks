@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import BestBook from './componentHome/BestBook'
 import BookInformation from './componentHome/BookInformation'

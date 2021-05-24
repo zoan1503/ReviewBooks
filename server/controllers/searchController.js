@@ -4,8 +4,9 @@ module.exports = {
 
 
     searchbook: (req, res) => {
-        book_title = req.body.book_title;
-        author = req.body.author;
+
+        book_title = req.query.book_title;
+        author = req.query.author;
         if (book_title && author) {
             book_title = "%" + book_title + "%";
             author = "%" + author + "%";
@@ -13,6 +14,7 @@ module.exports = {
             db.query(sql, [book_title, author], (err, response) => {
                 if (err) throw err
                 res.json(response)
+                console.log(response)
             })
         }
         if (book_title && !author) {
