@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import BestBook from './BestBook'
-import BookInformation from './BookInformation'
+import BestBook from './componentHome/BestBook'
+import BookInformation from './componentHome/BookInformation'
 import Axios from 'axios'
 import './css/screen1_style.css'
 export default function Home() {
@@ -16,6 +16,12 @@ export default function Home() {
         <React.Fragment>
             <div>
                 <div className="container">
+                    <div>
+                        <h1>Best Fiction</h1>
+                        <div className="topScreen">
+                            <div className="column3"><span>New to Goodreads? Get great book recommendations!<a> Start Now</a></span></div>
+                        </div>
+                    </div>
                     <BestBook bestBook={top5Book[0]} />
                     <hr />
                     <div className="belowContainer">

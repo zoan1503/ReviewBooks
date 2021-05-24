@@ -12,21 +12,12 @@ function BestBook(props) {
     const { bestBook } = props;
     return (
         <div>
-            <div>
-                <h1>Best Fiction</h1>
-                <div className="topScreen">
-                    <div className="column3"><span>New to Goodreads? Get great book recommendations!<a> Start Now</a></span></div>
-                    {/* <div className="column3 iconSocialNetwork">
-                        <span><a><img src="image/fb.PNG" /></a></span>
-                        <span><a><img src="image/twitter.PNG" /></a></span>
-                    </div> */}
-                </div>
-            </div>
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
                         <a>
-                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
+                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }}
+                            />
                         </a>
                     </div>
                 </div>

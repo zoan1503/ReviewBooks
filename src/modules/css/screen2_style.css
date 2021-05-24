@@ -1,0 +1,188 @@
+.rate {
+    float: left;
+    height: 46px;
+    
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    /* position: relative; */
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.topLeftContainer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column{
+    float: left;
+}
+
+.leftTopLeftContainer{
+    width: 25%;
+}
+
+.rightTopLeftContainer{
+    width: 75%;
+}
+
+.descriptionBook::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column1{
+    float: left;
+}
+
+.choice2020Image{
+    width: 30%;
+}
+
+.descriptionBook1{
+    width: 70%;
+}
+
+.linkToBuy::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column3{
+    float: left;
+}
+
+.onlineStoresButton{
+    padding-left: 30px;
+}
+
+.detailUserAndImage::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column4{
+    float: left;
+}
+
+.detailUser{
+    padding-left: 20px;
+}
+
+.pagination {
+    display: inline-block;
+  }
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+  }
+  
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+.review1::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column2{
+    float: left;
+}
+
+.editDetails{
+    float: right;
+    text-align: right;
+
+}
+
+.checked{
+    color: #c59b08;
+}
+
+.community::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column5{
+    float: left;
+}
+
+.show1-30{
+    float: right;
+}
+
+.startReview::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column6{
+    float: left;
+}
+
+.reviewUser::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column7{
+    float: left;
+}
+
+.detailReview{
+    width: 90%;
+    padding-left: 20px;
+}
+
+.userImage{
+    width: 10%;
+}
+
+
+

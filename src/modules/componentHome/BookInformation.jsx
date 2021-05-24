@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './css/BookInformation.css'
+import './../css/BookInformation.css'
 BookInformation.propTypes = {
     topBook: PropTypes.object,
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import BookInformation from '../modules/BookInformation'
+import BookInformation from '../modules/componentHome/BookInformation'
 export default class Content extends Component {
     constructor(props) {
         super(props);

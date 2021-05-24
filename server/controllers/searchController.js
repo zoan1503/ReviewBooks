@@ -33,5 +33,13 @@ module.exports = {
         }
     },
 
+    get_info_book: (req, res) => {
+        let id_book = req.body.id_book
+        let sql = 'SELECT * FROM books where id_book = ?'
+        db.query(sql, [id_book], (err, response) => {
+            if (err) throw err
+            res.json(response)
+        })
+    },
 
 }
