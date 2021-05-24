@@ -7,13 +7,13 @@ import { PrivateRoute, AuthRoute } from './CombineRoutes';
 import Layout from '../layout/Layout';
 // import { UserManager } from '../modules/auth/components/UserManager';
 import ReviewBooks from '../modules/ReviewBooks'
-import BooksManager from '../modules/BooksManager'
+import BookSearching from '../modules/BookSearching'
 import Home from '../modules/Home'
 const privatePage = [
     { path: '/', exact: true, component: () => <Home /> },
     { path: '/home', exact: true, component: () => <Home /> },
     { path: '/reviewbooks', exact: true, component: () => <ReviewBooks /> },
-    { path: '/booksmanager', exact: true, component: () => <BooksManager /> },
+    { path: '/booksearching', exact: true, component: () => <BookSearching /> },
     // { path: '/subjectmanager', exact: true, component: () => <SubjectManager /> },
     // { path: '/ternmanager', exact: true, component: () => <TernManager /> },
     // { path: '/profile', exact: true, component: () => <ProfileManager /> },

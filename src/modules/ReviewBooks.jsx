@@ -1,9 +1,8 @@
 
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import BookInfo from './componentReviewbook/BookInfor'
 import TopReview from './componentReviewbook/TopReview';
 import WriteReview from './componentReviewbook/WriteReview'
-import BestBook from './componentHome/BestBook'
 import './css/screen2_style.css'
 export default function ReviewBooks() {
     return (

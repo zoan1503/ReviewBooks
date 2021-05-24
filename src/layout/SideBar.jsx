@@ -33,7 +33,7 @@ export default class SideBar extends Component {
                                 <li className="text-white text-center">MENU</li>
                                 <div>
                                     <li className="nav-item has-treeview">
-                                        <a href="#" className="nav-link"> 
+                                        <a href="#" className="nav-link">
                                             <i className="nav-icon fa fa-users" />
                                             {/* <span>Review Sách</span> */}
                                             <Link to='/reviewbooks'>
@@ -45,16 +45,16 @@ export default class SideBar extends Component {
 
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="nav-icon fa fa-copy"></i> 
-                                            <Link to='/booksmanager'>
-                                                <span>&nbsp;Quản lí sách</span>
+                                            <i class="nav-icon fa fa-copy"></i>
+                                            <Link to='/booksearching'>
+                                                <span>&nbsp;Tìm kiếm sách</span>
                                             </Link>
                                         </a>
                                     </li>
 
                                     <li className="nav-item has-treeview">
                                         <a href="#abc" className="nav-link">
-                                            <i className="nav-icon fa fa-calendar" /> 
+                                            <i className="nav-icon fa fa-calendar" />
                                             <Link to='/usermanager'>
                                                 <span>&nbsp;Quản lý tài khoản</span>
                                             </Link>
