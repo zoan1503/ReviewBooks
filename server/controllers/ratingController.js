@@ -19,14 +19,13 @@ module.exports = {
         });
     },
     // Bổ sung
-    get_average_1book: (req, res) => {
-        let sql = 'SELECT * FROM rating'
+    get_average_and_count_rating_book: (req, res) => {
+        let sql = "SELECT book.id_book, book.book_title, book.author, description, book.image_url, rate.avgRating, rate.counting FROM (SELECT FORMAT(AVG(rating_value), 1) AS avgRating, count(rating_value) as counting, id_book FROM rating GROUP BY id_book ) rate JOIN books book ON rate.id_book = book.id_book order by avgRating desc limit 5"
         db.query(sql, (err, response) => {
             if (err) throw err
             res.json(response)
         })
     },
-
     get_rating: (req, res) => {
         let id_user = req.body.id_user
         let id_book = req.body.id_book

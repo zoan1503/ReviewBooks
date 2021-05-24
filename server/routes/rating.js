@@ -5,6 +5,6 @@ var ratingController = require('./../controllers/ratingController');
 router.post('/add', ratingController.add);
 router.get('/getrating', ratingController.get_rating);
 router.put('/update', ratingController.update);
-router.delete('/getaverage1book', ratingController.get_average_1book);
+router.get('/getaverageratingbook', ratingController.get_average_and_count_rating_book);
 
 module.exports = router;

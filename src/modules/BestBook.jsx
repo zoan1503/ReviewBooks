@@ -2,27 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 BestBook.propTypes = {
-
+    bestBook: PropTypes.object,
 };
 
+BestBook.defaultProps = {
+    bestBook: {},
+}
 function BestBook(props) {
+    const { bestBook } = props;
     return (
         <div>
             <div>
                 <h1>Best Fiction</h1>
                 <div className="topScreen">
                     <div className="column3"><span>New to Goodreads? Get great book recommendations!<a> Start Now</a></span></div>
-                    <div className="column3 iconSocialNetwork">
+                    {/* <div className="column3 iconSocialNetwork">
                         <span><a><img src="image/fb.PNG" /></a></span>
                         <span><a><img src="image/twitter.PNG" /></a></span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
                         <a>
-                            <img src="image/bookImage.png" style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
+                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
                         </a>
                     </div>
                 </div>
@@ -32,14 +36,14 @@ function BestBook(props) {
                             <div className="bookDetails column2">
                                 <div>
                                     <span style={{ color: 'orange', fontWeight: 'bold' }}>WINNER</span>
-                                    <span style={{ color: 'grey' }}>72,828 votes</span>
+                                    <span style={{ color: 'grey' }}>{bestBook.counting} votes</span>
                                 </div>
                                 <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
-                                    The Midnight Library
-              </div>
+                                    {bestBook.book_title}
+                                </div>
                                 <div style={{ color: 'grey' }}>
-                                    by Matt Haig (Goodreads author)
-              </div>
+                                    {bestBook.author}
+                                </div>
                             </div>
                             <div className="wrapperButton column2">
                                 <div className="readButton">
@@ -70,8 +74,8 @@ function BestBook(props) {
                             </div>
                         </div>
                         <div className="bookDescription">
-                            This year’s Goodreads Choice Award for Fiction was the closest contest in the history of the awards. Your winner—by five votes—is The Midnight Library, author Matt Haig’s wildly inventive blend of literary and speculative fiction. The quick gist: Imagine a library in which each book represents a different path your life could have taken. Now imagine spending eternity in that library. It’s a Goodreads kind of dream…
-          </div>
+                            {bestBook.description}
+                        </div>
                     </div>
                 </div>
             </div>
