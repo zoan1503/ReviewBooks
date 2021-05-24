@@ -9,11 +9,13 @@ import Layout from '../layout/Layout';
 import ReviewBooks from '../modules/ReviewBooks'
 import BookSearching from '../modules/BookSearching'
 import Home from '../modules/Home'
+
 const privatePage = [
     { path: '/', exact: true, component: () => <Home /> },
     { path: '/home', exact: true, component: () => <Home /> },
     { path: '/reviewbooks', exact: true, component: () => <ReviewBooks /> },
     { path: '/booksearching', exact: true, component: () => <BookSearching /> },
+
     // { path: '/subjectmanager', exact: true, component: () => <SubjectManager /> },
     // { path: '/ternmanager', exact: true, component: () => <TernManager /> },
     // { path: '/profile', exact: true, component: () => <ProfileManager /> },

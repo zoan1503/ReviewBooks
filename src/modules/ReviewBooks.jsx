@@ -15,7 +15,7 @@ export default function ReviewBooks() {
                         <div classname="community" style={{ marginTop: '20px' }}>
                             <div classname="column5" style={{ fontWeight: 'bold' }}>
                                 COMMUNITY REVIEWS
-    </div>
+                            </div>
                             <div classname="column5 show1-30" style={{ textAlign: 'right' }}>Showing 1-30</div>
                         </div>
                         <div>
