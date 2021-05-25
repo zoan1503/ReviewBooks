@@ -27,22 +27,26 @@ module.exports = {
         })
     },
     get_all_review_1book: (req, res) => {
-        let id_book = req.body.id_book;
+        console.log(req.query)
+        let id_book = req.query.id_book;
         let sql = 'SELECT * FROM review where id_book = ?'
         db.query(sql, [id_book], (err, response) => {
             if (err) throw err
             res.json(response)
+
         })
     },
 
     getlast: (req, res) => {
-        let id_user = req.body.id_user
-        let id_book = req.body.id_book
-        let sql = 'SELECT * FROM review where id_user = ? and id_book = ? ORDER BY review_id DESC LIMIT 1'
-        db.query(sql, [id_user, id_book], (err, response) => {
+
+        let review_id = req.query.review_id
+        let sql = 'SELECT fullname, users.id_user FROM users, review where review.id_user = users.id_user and review_id = ?'
+        db.query(sql, [review_id], (err, response) => {
             if (err) throw err
             res.json(response)
+            console.log(response)
         })
+
     },
     update: (req, res) => {
         let review_id = req.body.review_id

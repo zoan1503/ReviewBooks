@@ -3,13 +3,37 @@ import React, { useState, useEffect } from 'react';
 import BookInfo from './componentReviewbook/BookInfor'
 import TopReview from './componentReviewbook/TopReview';
 import WriteReview from './componentReviewbook/WriteReview'
+import Axios from 'axios'
 import './css/screen2_style.css'
 export default function ReviewBooks() {
+
+    const [bookInfo, setBookInfo] = useState({});
+    const [listReview, setListReview] = useState([]);
+    useEffect(async () => {
+        await Axios
+            .get('http://localhost:8000/search/getinfobook', {
+                params: {
+                    "id_book": 2
+                }
+            })
+            .then(response => setBookInfo(response.data));
+        Axios
+            .get('http://localhost:8000/review/getallreview1book', {
+                params: {
+                    'id_book': bookInfo.id_book
+                }
+            })
+            .then(response => setListReview(response.data));
+    }, []);
+    // useEffect(() => {
+
+
+    // }, []);
     return (
         <React.Fragment>
             <div className="container">
                 <div className="leftContainer column8">
-                    <BookInfo />
+                    <BookInfo bookInfo={bookInfo[0]} />
                     <WriteReview />
                     <div classname="review" style={{ marginTop: '20px' }}>
                         <div classname="community" style={{ marginTop: '20px' }}>
@@ -21,10 +45,7 @@ export default function ReviewBooks() {
                         <div>
                         </div>
                         <hr style={{ marginTop: '5px', marginBottom: '10px' }} />
-                        <TopReview />
-                        <TopReview />
-                        <TopReview />
-                        <TopReview />
+                        {listReview.map(list => (<TopReview reviews={list} />))}
                         <div classname="pagination" style={{ textAlign: 'right', float: 'right' }}>
                             <a href="#">«</a>
                             <a href="#" classname="active">1</a>
@@ -37,8 +58,6 @@ export default function ReviewBooks() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </React.Fragment>
     );

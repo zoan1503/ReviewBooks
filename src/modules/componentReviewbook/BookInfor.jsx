@@ -5,7 +5,8 @@ BookInfor.propTypes = {
     bookInfo: PropTypes.object,
 };
 BookInfor.defaultProps = {
-    bookInfo: {},
+    bookInfo: {
+    },
 }
 function BookInfor(props) {
     const { bookInfo } = props;

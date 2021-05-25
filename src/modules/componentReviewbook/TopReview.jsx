@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './../css/screen2_style.css'
+import Axios from 'axios'
 TopReview.propTypes = {
-
+    reviews: PropTypes.object,
 };
-
+TopReview.defaultProps = {
+    reviews: {}
+}
 function TopReview(props) {
+    const [user, setUser] = useState({});
+    const { reviews } = props;
+    useEffect(() => {
+        Axios
+            .get("http://localhost:8000/review/getlast", {
+                params: {
+                    'review_id': 3
+                }
+            })
+            .then(response => setUser(response.data));
+    }, []);
+    console.log(user)
     return (
         <div>
             <div classname="reviewUser" style={{ marginTop: '20px' }}>
                 <div classname="userImage column7">
-                    <img src="image/user4.PNG" />
+                    <img src="https://www.seekpng.com/png/small/115-1150053_avatar-png-transparent-png-royalty-free-default-user.png" width='50' height='50' />
                 </div>
                 <div classname="detailReview column7">
                     <div>
-                        <span><a>Selius Megande</a></span>
-                        <span style={{ color: 'grey' }}> rated it</span>
+                        <span><a>{user.fullname}</a></span>
+                        <span style={{ color: 'grey' }}> </span>
                         <span>
                             <span classname="fa fa-star checked" />
                             <span classname="fa fa-star checked" />
@@ -28,12 +43,7 @@ function TopReview(props) {
                         <span>Aug 21,2020</span>
                     </div>
                     <div>
-                        Okay! No more words! This is one of the best sci-fi dances with fantasy which carries
-                        additional philosophic vibes novel of the year! I LOVED IT! ( this is not kind of toasting
-                        for the book and raising your glass kind of loving it. This is more like climbing at the top
-                        of the roof and declaring your love by shouting and howling to the moon kind of love. If you
-                        read the song lyrics of “ Howl” at the book you may probably understand why I feel so
-        enthusiastic and why I’m writing a high volume revi<span><a>...more</a></span>
+                        {reviews.content_review}
                     </div>
                     <div>
                         <span>
