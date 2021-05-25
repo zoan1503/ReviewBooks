@@ -11,15 +11,15 @@ TopReview.defaultProps = {
 function TopReview(props) {
     const [user, setUser] = useState({});
     const { reviews } = props;
-    useEffect(() => {
-        Axios
-            .get("http://localhost:8000/review/getlast", {
-                params: {
-                    'review_id': 3
-                }
-            })
-            .then(response => setUser(response.data));
-    }, []);
+    // useEffect(() => {
+    //     Axios
+    //         .get("http://localhost:8000/review/getlast", {
+    //             params: {
+    //                 'review_id': 3
+    //             }
+    //         })
+    //         .then(response => setUser(response.data));
+    // }, []);
     console.log(user)
     return (
         <div>
@@ -43,7 +43,7 @@ function TopReview(props) {
                         <span>Aug 21,2020</span>
                     </div>
                     <div>
-                        {reviews.content_review}
+                        {reviews?.content_review}
                     </div>
                     <div>
                         <span>

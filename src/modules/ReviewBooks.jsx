@@ -7,29 +7,25 @@ import Axios from 'axios'
 import './css/screen2_style.css'
 export default function ReviewBooks() {
 
-    const [bookInfo, setBookInfo] = useState({});
+    const [bookInfo, setBookInfo] = useState([]);
     const [listReview, setListReview] = useState([]);
-    useEffect(async () => {
-        await Axios
-            .get('http://localhost:8000/search/getinfobook', {
-                params: {
-                    "id_book": 2
-                }
-            })
-            .then(response => setBookInfo(response.data));
+    useEffect(() => {
         Axios
             .get('http://localhost:8000/review/getallreview1book', {
                 params: {
-                    'id_book': bookInfo.id_book
+                    'id_book': 2
                 }
             })
-            .then(response => setListReview(response.data));
+            .then(response => setBookInfo(response.data));
+        //.then(response => console.log(response.data));
+
     }, []);
     // useEffect(() => {
 
 
     // }, []);
     return (
+
         <React.Fragment>
             <div className="container">
                 <div className="leftContainer column8">
@@ -45,7 +41,7 @@ export default function ReviewBooks() {
                         <div>
                         </div>
                         <hr style={{ marginTop: '5px', marginBottom: '10px' }} />
-                        {listReview.map(list => (<TopReview reviews={list} />))}
+                        {bookInfo && bookInfo.map(list => (<TopReview reviews={list} />))}
                         <div classname="pagination" style={{ textAlign: 'right', float: 'right' }}>
                             <a href="#">«</a>
                             <a href="#" classname="active">1</a>
@@ -59,6 +55,6 @@ export default function ReviewBooks() {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
