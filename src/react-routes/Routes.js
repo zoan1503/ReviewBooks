@@ -8,6 +8,9 @@ import Layout from '../layout/Layout';
 // import { UserManager } from '../modules/auth/components/UserManager';
 import ReviewBooks from '../modules/ReviewBooks'
 import BookSearching from '../modules/BookSearching'
+import UserManager from '../modules/UserManager'
+import ReviewedBook from '../modules/ReviewedBook'
+import ReactionHistory from '../modules/ReactionHistory'
 import Home from '../modules/Home'
 import Axios from 'axios'
 
@@ -17,6 +20,10 @@ const privatePage = [
     { path: '/home', exact: true, component: () => <Home /> },
     { path: '/reviewbooks', exact: true, component: () => <ReviewBooks /> },
     { path: '/booksearching', exact: true, component: () => <BookSearching /> },
+    { path: '/usermanager', exact: true, component: () => <UserManager /> },
+    { path: '/reviewedbook', exact: true, component: () => <ReviewedBook /> },
+    { path: '/reactionhistory', exact: true, component: () => <ReactionHistory /> },
+
 
     // { path: '/subjectmanager', exact: true, component: () => <SubjectManager /> },
     // { path: '/ternmanager', exact: true, component: () => <TernManager /> },

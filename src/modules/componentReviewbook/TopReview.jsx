@@ -15,17 +15,17 @@ function TopReview(props) {
     const [hover, setHover] = useState([5]);
     const [like, setLike] = useState([]);
     const { reviews } = props;
-    // useEffect(() => {
-    //     Axios
-    //         .get('http://localhost:8000/reaction/getalllike', {
-    //             params: {
-    //                 'review_id': reviews.review_id
-    //             }
-    //         })
-    //         .then(response => console.log(response.data));
-    //     //.then(response => console.log(response.data));
+    useEffect(() => {
+        Axios
+            .get('http://localhost:8000/reaction/getalllike', {
+                params: {
+                    'review_id': reviews.review_id
+                }
+            })
+            .then(response => console.log(response.data));
+        //.then(response => console.log(response.data));
 
-    // }, [reviews]);
+    }, [reviews]);
     // let bookInfo = [
     //     {
     //         "id_book": 1,

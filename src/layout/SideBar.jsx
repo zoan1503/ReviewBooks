@@ -34,7 +34,18 @@ export default class SideBar extends Component {
                                 <div>
                                     <li className="nav-item has-treeview">
                                         <a href="#" className="nav-link">
-                                            <i className="nav-icon fa fa-users" />
+                                            <i className="nav-icon fa fa-home" />
+                                            {/* <span>Review Sách</span> */}
+                                            <Link to='/home'>
+                                                <span>&nbsp;Trang chủ</span>
+                                            </Link>
+                                            {/* <i className="right fa fa-angle-left"></i> */}
+                                        </a>
+                                    </li>
+
+                                    <li className="nav-item has-treeview">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fa fa-book" />
                                             {/* <span>Review Sách</span> */}
                                             <Link to='/reviewbooks'>
                                                 <span>&nbsp;Review Sách</span>
@@ -45,7 +56,7 @@ export default class SideBar extends Component {
 
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="nav-icon fa fa-copy"></i>
+                                            <i class="nav-icon fa fa-search"></i>
                                             <Link to='/booksearching'>
                                                 <span>&nbsp;Tìm kiếm sách</span>
                                             </Link>
@@ -54,9 +65,9 @@ export default class SideBar extends Component {
 
                                     <li className="nav-item has-treeview">
                                         <a href="#abc" className="nav-link">
-                                            <i className="nav-icon fa fa-calendar" />
+                                            <i className="nav-icon fa fa-user" />
                                             <Link to='/usermanager'>
-                                                <span>&nbsp;Quản lý tài khoản</span>
+                                                <span>&nbsp;Quản lý hồ sơ</span>
                                             </Link>
                                         </a>
                                         <ul className="nav nav-treeview">
@@ -71,11 +82,10 @@ export default class SideBar extends Component {
                                 <div>
                                     <li className="nav-item has-treeview">
                                         <a href="#abc" className="nav-link">
-                                            <i className="nav-icon fa fa-user" /> <p>
-                                                Hồ Sơ
-                                    <i className="right fa fa-angle-left"></i>
-                                            </p>
-
+                                            <i className="nav-icon fa fa-book" />
+                                            <Link to='/reviewedbook'>
+                                                <span>&nbsp;Sách đã Review</span>
+                                            </Link>
                                         </a>
                                         <ul className="nav nav-treeview">
                                             <li className="nav-item"><a href="/profile" className="nav-link">Hồ sơ cá nhân</a></li>
@@ -84,11 +94,10 @@ export default class SideBar extends Component {
                                     </li>
                                     <li className="nav-item has-treeview">
                                         <a href="#abc" className="nav-link">
-                                            <i className="nav-icon fa fa-copy" /> <p>
-                                                Quản lý học tập
-                            <i className="right fa fa-angle-left"></i>
-                                            </p>
-
+                                            <i className="nav-icon fa fa-calendar" />
+                                            <Link to='/reactionhistory'>
+                                                <span>&nbsp;Lịch sử tương tác</span>
+                                            </Link>
                                         </a>
                                         <ul className="nav nav-treeview">
                                             <li className="nav-item"><a href="/lecturermanager" className="nav-link">Danh sách lớp học</a></li>

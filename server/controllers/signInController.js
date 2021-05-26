@@ -4,8 +4,8 @@ module.exports = {
 
 
     get_all_review_book: (req, res) => {
-        id_user = req.body.id_user;
-        let sql = 'select book_title, content_review, image_url, author  from review, books where review.id_book = books.id_book and id_user = ?'
+        id_user = req.query.id_user;
+        let sql = 'select books.id_book, book_title, author, description, image_url, review_id, content_review, review.id_user, users.username from books inner join review on books.id_book = review.id_book  inner join users on review.id_user = users.id_user and users.id_user = ?'
         db.query(sql, [id_user], (err, response) => {
             if (err) throw err
             res.json(response)
@@ -21,16 +21,16 @@ module.exports = {
         })
     },
     get_all_reaction: (req, res) => {
-        id_user = req.body.id_user;
-        let sql = 'select reaction_choice, content_review, book_title from reaction, review, books where review.id_book = books.id_book and review.review_id = reaction.review_id and reaction.id_user = ?'
+        id_user = req.query.id_user;
+        let sql = 'select books.id_book, book_title, image_url, reaction.reaction_id, reaction.review_id, content_review, review.id_user as reviewer_id, user2.username as reviewer, users.username as user_react, reaction.id_user, reaction.reaction_choice from reaction inner join review on reaction.review_id = review.review_id inner join books on books.id_book = review.id_book inner join users user2 on user2.id_user = review.id_user inner join users on reaction.id_user = users.id_user and users.id_user = ?'
         db.query(sql, [id_user], (err, response) => {
             if (err) throw err
             res.json(response)
         })
     },
     get_all_user_info: (req, res) => {
-        username = req.body.username;
-        password = req.body.password;
+        username = req.query.username;
+        password = req.query.password;
         let sql = 'select * from users where username = ? and password =?'
         db.query(sql, [username, password], (err, response) => {
             if (err) throw err
