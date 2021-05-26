@@ -8,42 +8,43 @@ import Axios from 'axios'
 import './css/screen2_style.css'
 export default function ReviewBooks() {
 
-    // const [bookInfo, setBookInfo] = useState([]);
-    // const [listReview, setListReview] = useState([]);
-    // useEffect(() => {
-    //     Axios
-    //         .get('http://localhost:8000/review/getallreview1book', {
-    //             params: {
-    //                 'id_book': 2
-    //             }
-    //         })
-    //         .then(response => setBookInfo(response.data));
-    //     //.then(response => console.log(response.data));
+    const [bookInfo, setBookInfo] = useState([]);
+    useEffect(() => {
+        Axios
+            .get('http://localhost:8000/review/getallreview1book', {
+                params: {
+                    'id_book': 2
+                }
+            })
+            .then(response => setBookInfo(response.data));
+        //.then(response => console.log(response.data));
 
-    // }, []);
+    }, []);
     // useEffect(() => {
-    let bookInfo = [
-        {
-            "id_book": 1,
-            "book_title": "SA MÔN KHÔNG HẢI THẾT YẾN BẦY QUỶ ĐẠI ĐƯỜNG",
-            "author": "Yumemakura Baku",
-            "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
-            "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
-            "review_id": 1,
-            "content_review": "Sách non",
-            "id_user": 1
-        },
-        {
-            "id_book": 1,
-            "book_title": "SA MÔN KHÔNG HẢI THẾT YẾN BẦY QUỶ ĐẠI ĐƯỜNG",
-            "author": "Yumemakura Baku",
-            "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
-            "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
-            "review_id": 9,
-            "content_review": "SÁch ngáo vl",
-            "id_user": 6
-        }
-    ]
+    // let bookInfo = [
+    //     {
+    //     "id_book": 1,
+    //     "book_title": "SA MÔN KHÔNG HẢI THẾT YẾN BẦY QUỶ ĐẠI ĐƯỜNG",
+    //     "author": "Yumemakura Baku",
+    //     "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
+    //     "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
+    //     "review_id": 1,
+    //     "content_review": "Sách non",
+    //     "id_user": 1,
+    //     "username": "quang1"
+    // },
+    // {
+    //     "id_book": 1,
+    //     "book_title": "SA MÔN KHÔNG HẢI THẾT YẾN BẦY QUỶ ĐẠI ĐƯỜNG",
+    //     "author": "Yumemakura Baku",
+    //     "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
+    //     "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
+    //     "review_id": 9,
+    //     "content_review": "SÁch ngáo vl",
+    //     "id_user": 6,
+    //     "username": "thanhmoose"
+    // }
+    // ]
     // }, []);
     return (
 
@@ -63,7 +64,7 @@ export default function ReviewBooks() {
                         </div>
                         <hr style={{ marginTop: '5px', marginBottom: '10px' }} />
                         {/* <Comment /> */}
-                        <TopReview></TopReview>
+                        <TopReview reviews={bookInfo} />
                         {/* {bookInfo && bookInfo.map(list => (<Comment info={list} />))} */}
                         <div classname="pagination" style={{ textAlign: 'right', float: 'right' }}>
                             <a href="#">«</a>
@@ -78,6 +79,6 @@ export default function ReviewBooks() {
                     </div>
                 </div>
             </div>
-        </React.Fragment >
+        </React.Fragment>
     );
 }

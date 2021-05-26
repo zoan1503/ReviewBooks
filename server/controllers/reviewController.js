@@ -29,7 +29,7 @@ module.exports = {
     get_all_review_1book: (req, res) => {
         console.log(req.query)
         let id_book = req.query.id_book;
-        let sql = 'select books.id_book, book_title, author, description, image_url, review_id, content_review, review.id_user from books inner join review on books.id_book = review.id_book and review.id_book = ?'
+        let sql = 'select books.id_book, book_title, author, description, image_url, review_id, content_review, review.id_user, users.username from books inner join review on books.id_book = review.id_book and review.id_book = ? inner join users on review.id_user = users.id_user'
         db.query(sql, [id_book], (err, response) => {
             if (err) throw err
             res.json(response)

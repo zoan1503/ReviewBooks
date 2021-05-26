@@ -19,16 +19,17 @@ module.exports = {
         });
     },
     get_all_like: (req, res) => {
-        let review_id = req.body.review_id;
-        let sql = 'select count(reaction_choice)  from reaction where reaction_choice = 1 and review_id = ? group by review_id'
+        console.log(req.query)
+        let review_id = req.query.review_id;
+        let sql = 'select count(reaction_choice) as likes from reaction where reaction_choice = 1 and review_id = ? group by review_id'
         db.query(sql, [review_id], (err, response) => {
             if (err) throw err
             res.json(response)
         })
     },
     get_all_dislike: (req, res) => {
-        let review_id = req.body.review_id;
-        let sql = 'select count(reaction_choice)  from reaction where reaction_choice = 0 and review_id = ? group by review_id'
+        let review_id = req.query.review_id;
+        let sql = 'select count(reaction_choice) as dislike from reaction where reaction_choice = 0 and review_id = ? group by review_id'
         db.query(sql, [review_id], (err, response) => {
             if (err) throw err
             res.json(response)

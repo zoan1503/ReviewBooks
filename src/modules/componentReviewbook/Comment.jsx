@@ -8,7 +8,6 @@ import moment from 'moment';
 // import { AuthActions } from '../../../modules/auth/redux/actions';
 import parse from 'html-react-parser';
 import ContentMaker from './ContentMaker'
-im
 
 export default class Comment extends Component {
     constructor(props) {
@@ -385,42 +384,42 @@ export default class Comment extends Component {
                         return (
                             <div key={item._id}>
                                 <img className="user-img-level1" src={item.image_url} alt="User Image" />
-                                 {/* {editComment !== item._id && // Khi đang edit thì ẩn đi */}
-                                    <React.Fragment>
-                                        <div className="content-level1">
-                                            <a style={{ cursor: "pointer" }}>{item.creator?.name} </a>
-                                            {item.description.split('\n').map((item, idx) => {
-                                                return (
-                                                    <span key={item._id}>
-                                                        {parse(item)}
-                                                    </span>
-                                                );
-                                            })
-                                            }
-                                            {item.creator?._id === currentUser &&
-                                                <div className="btn-group pull-right">
-                                                    <span data-toggle="dropdown">
-                                                        <i className="fa fa-ellipsis-h"></i>
-                                                    </span>
-                                                    <ul className="dropdown-menu">
-                                                        <li><a style={{ cursor: "pointer" }} onClick={() => this.handleEditComment(item)} >Sửa</a></li>
-                                                        <li><a style={{ cursor: "pointer" }} onClick={() => this.props.deleteComment(data._id, item._id, this.props.type)} >Xóa</a></li>
-                                                    </ul>
-                                                </div>}
-                                        </div>
-                                        <ul className="list-inline tool-level1">
-                                            <li><span className="text-sm">{moment(item.createdAt).fromNow()}</span></li>
+                                {/* {editComment !== item._id && // Khi đang edit thì ẩn đi */}
+                                <React.Fragment>
+                                    <div className="content-level1">
+                                        <a style={{ cursor: "pointer" }}>{item.creator?.name} </a>
+                                        {item.description.split('\n').map((item, idx) => {
+                                            return (
+                                                <span key={item._id}>
+                                                    {parse(item)}
+                                                </span>
+                                            );
+                                        })
+                                        }
+                                        {item.creator?._id === currentUser &&
+                                            <div className="btn-group pull-right">
+                                                <span data-toggle="dropdown">
+                                                    <i className="fa fa-ellipsis-h"></i>
+                                                </span>
+                                                <ul className="dropdown-menu">
+                                                    <li><a style={{ cursor: "pointer" }} onClick={() => this.handleEditComment(item)} >Sửa</a></li>
+                                                    <li><a style={{ cursor: "pointer" }} onClick={() => this.props.deleteComment(data._id, item._id, this.props.type)} >Xóa</a></li>
+                                                </ul>
+                                            </div>}
+                                    </div>
+                                    <ul className="list-inline tool-level1">
+                                        <li><span className="text-sm">{moment(item.createdAt).fromNow()}</span></li>
 
-                                            <li><a style={{ cursor: "pointer" }} className="link-black text-sm" onClick={() => this.handleShowChildComment(item._id)}><i className="fa fa-comments-o margin-r-5"></i> Bình luận  &nbsp;</a></li>
-                                        </ul>
-                                    </React.Fragment>
-                            
+                                        <li><a style={{ cursor: "pointer" }} className="link-black text-sm" onClick={() => this.handleShowChildComment(item._id)}><i className="fa fa-comments-o margin-r-5"></i> Bình luận  &nbsp;</a></li>
+                                    </ul>
+                                </React.Fragment>
+
                             </div>
                         )
                     }) : null
                 }
                 {/* <img className="user-img-level1" src={item.image_url} alt="User Image" /> */}
-                
+
                 {/* <ContentMaker
                     idQuill={`add-comment`}
                     inputCssClass="text-input-level1" controlCssClass="tool-level1"
