@@ -19,7 +19,7 @@ module.exports = {
         });
     },
     get_all_like: (req, res) => {
-        console.log(req.query)
+        console.log("reviewid: ", req.query)
         let review_id = req.query.review_id;
         let sql = 'select count(reaction_choice) as likes from reaction where reaction_choice = 1 and review_id = ? group by review_id'
         db.query(sql, [review_id], (err, response) => {

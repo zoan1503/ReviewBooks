@@ -15,17 +15,7 @@ function TopReview(props) {
     const [hover, setHover] = useState([5]);
     const [like, setLike] = useState([]);
     const { reviews } = props;
-    useEffect(() => {
-        Axios
-            .get('http://localhost:8000/reaction/getalllike', {
-                params: {
-                    'review_id': reviews.review_id
-                }
-            })
-            .then(response => console.log(response.data));
-        //.then(response => console.log(response.data));
-
-    }, [reviews]);
+    console.log(reviews)
     // let bookInfo = [
     //     {
     //         "id_book": 1,
@@ -61,17 +51,19 @@ function TopReview(props) {
                                     fractions={2}
                                     emptySymbol="fa fa-star-o fa high"
                                     fullSymbol="fa fa-star fa high"
-                                    initialRating={rating}
-                                    onClick={(value) => {
-                                        setRating(value)
-                                        console.log(rating)
-                                    }}
+                                    initialRating={item && item.rating_value}
+                                // onClick={(value) => {
+                                //     setRating(value)
+                                //     console.log(rating)
+                                // }}
                                 />
                             </span>
                             <span className="description" style={{ marginLeft: "65px" }}>Post a review - 3 days ago</span>
                         </div>
                         <p className="review-area">
                             {item.content_review}
+                            <br />
+                            Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike}
                         </p>
                     </div>
                 )
