@@ -26,49 +26,115 @@
             tác</button>
             <button class="tablink col-4" onclick="openPage('sachDaReview', this, '#EDEDE3')">Sách đã review</button>
         </div>
+
+        <div id="thongTinCaNhan" class="tabContent row container-fluid" style="padding-top: 50px;">
+            <div class= "avatarImage">
+                <img class = "img-fluid rounded-circle" src="https://s.gr-assets.com/assets/nophoto/user/f_225x300-9aa43f0ccc0355209c834d010c65a83b.png" style="max-height: 180px;">
+            </div>
+            <br>
+            <div class= "avatar">
+                <h3>Thông tin cá nhân</h3>
+            </div>
+            <br>
+            <div class = "personalInformation">
+                <div class= "email row" style="padding-bottom: 5px;">
+                    <p class = "col-3" style="text-align: right;">Email<span style="color: red;">*</span>:</p>
+                    
+                    <div class = "card col-9">
+                        <div>
+                            <p>maihuong@gmail.com</p>
+                        </div>
+                            
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class= "hoten row" style="padding-bottom: 5px;">
+                    <p class = "col-3" style="text-align: right;">Họ và tên đệm<span style="color: red;">*</span>:</p>
+                    
+                    <div class = "card col-9">
+                        <div>
+                            <p>Lê</p>
+                        </div>
+                            
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class= "ten row" style="padding-bottom: 5px;">
+                    <p class = "col-3" style="text-align: right;">Tên<span style="color: red;">*</span></p>
+                    
+                    <div class = "card col-9">
+                        <div>
+                            <p>Hương</p>
+                        </div>
+                            
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class= "ngaysinh row" style="padding-bottom: 5px;">
+                    <p class = "col-3" style="text-align: right;">Ngày sinh<span style="color: red;">*</span>:</p>
+                    
+                    <div class = "card col-9">
+                        <div>
+                            <p>03/07/1987</p>
+                        </div>
+                            
+                    </div>
+                    
+                    
+                </div>
+
+
+            </div>
+            <br>
+            <div class = "suaThongTin">
+                <button class = "btn btn-primary">Sửa thông tin</button>
+            </div>
+
+            <br>
+
+            <div style="text-align: center;">
+                <h3>Thay đổi mật khẩu</h3>
+            </div>
+            <br>
+
+            <div class= "container-fluid password">
+                <div class = "row" style="padding-bottom: 5px;">
+                    <p style="text-align: right;" class = "col-3 col-sm-3">
+                        Mật khẩu cũ<span style="color: red;">*</span>:
+                    </p>
+                    <input type = "text" id = "subject" placeholder="Nhập mật khẩu cũ" class = "col-9 col-sm-9 form-control">
+                </div>
+
+                <div class = "row" style="padding-bottom: 5px;">
+                    <p style="text-align: right;" class = "col-3 col-sm-3">
+                        Mật khẩu mới<span style="color: red;">*</span>:
+                    </p>
+                    <input type = "text" id = "subject" placeholder="Nhập mật khẩu mới" class= "col-9 col-sm-9 form-control">
+                </div>
+
+                <div class = "row" style="padding-bottom: 5px;">
+                    <p style="text-align: right;" class = "col-3 col-sm-3">
+                        Nhập lại mật khẩu mới<span style="color: red;">*</span>:
+                    </p>
+                    <input type = "text" id = "subject" placeholder="Nhập lại mật khẩu mới" class= "col-9 col-sm-9 form-control">
+                </div>
+            </div>
+
+            <div class = "doiMatKhau">
+                <button class = "btn btn-primary">Đổi mật khẩu</button>
+            </div>
+            
+            
+        </div>
         
 
-        <div id="thongTinCaNhan" class="tabContent row container-fluid">
-            <div class = "row">
-                <div class="profilePicture col-3 col-sm-3 col-md-3">
-                    <a href="#">
-                        <img  class="profilePictureIcon img-fluid rounded-circle"
-                            src="https://s.gr-assets.com/assets/nophoto/user/f_225x300-9aa43f0ccc0355209c834d010c65a83b.png">
-                    </a>
-                    <div class="statsInfo">
-                        <a style="color: #00635d;  text-decoration: none; text-align: center;" href="#">1 ratings</a> <br>
-                        <a style="color: #00635d;  text-decoration: none; text-align: center;" href="#">1 review</a> <br>
-                        <a style="color: #00635d;  text-decoration: none; text-align: center;" href="#">more photos</a> <br>
-                    </div>
-                </div>
-
-                <div class="userInfo col-9 col-sm-9 col-md-9">
-                    <h1 class="userName">Name</h1>
-                    <div class="infoTitle">Age</div>
-                    <div class="infoItem">21</div>
-                    <div class="infoTitle">Birthday</div>
-                    <div class="infoItem">30/10/1999</div>
-                    <div class="infoTitle">Gender</div>
-                    <div class="infoItem">Female</div>
-                    <div class="infoTitle">Email</div>
-                    <div class="infoItem">123@gmail.com</div>
-                    <div class="infoTitle">Address</div>
-                    <div class="infoItem">Hanoi</div>
-                    <div class="infoTitle">Activity</div>
-                    <div class="infoItem">joined in March 2021, last active this month</div>
-    
-    
-                </div>
-            </div>
-            
-            
-
-            <div
-                style="text-align: right; font-size: 15px; font-weight: bold;position: absolute; bottom: 8px; right: 16px;">
-                <a href="#"> Chinh sua thong tin ca nhan</a>
-            </div>
-
-        </div>
+        
 
      
 
