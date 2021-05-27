@@ -37,6 +37,7 @@ function WriteReview(props) {
             .catch(function (error) {
                 console.log(error);
             });
+        
     }
     return (
         <div>

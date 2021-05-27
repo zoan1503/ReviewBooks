@@ -47,6 +47,7 @@ function TopReview(props) {
                             <img className="img-circle img-bordered-sm" src={item.image_url} alt="User Image" style={{ width: "60px", height: "60px" }} />
                             <span className="username" style={{ marginLeft: "65px" }}>
                                 <a href="#">{item.username}</a>
+                                &nbsp;
                                 <Rating
                                     fractions={2}
                                     emptySymbol="fa fa-star-o fa high"
@@ -58,12 +59,12 @@ function TopReview(props) {
                                 // }}
                                 />
                             </span>
-                            <span className="description" style={{ marginLeft: "65px" }}>Post a review - 3 days ago</span>
+                            <span className="description" style={{ marginLeft: "65px" }}>Posted a review</span>
                         </div>
                         <p className="review-area">
                             {item.content_review}
                             <br />
-                            <br/>
+                            <br />
                             <div>
                                 <a class="btn btn-success" href="#" role="button">Like</a>
                             &nbsp;

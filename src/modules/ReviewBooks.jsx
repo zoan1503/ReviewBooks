@@ -13,7 +13,7 @@ export default function ReviewBooks() {
         Axios
             .get('http://localhost:8000/review/getallreview1book', {
                 params: {
-                    'id_book': 2
+                    'id_book': 22
                 }
             })
             .then(response => setBookInfo(response.data));
@@ -52,7 +52,7 @@ export default function ReviewBooks() {
             <div className="container">
                 <div className="leftContainer column8">
                     <BookInfo bookInfo={bookInfo[0]} />
-                    <WriteReview />
+                    <WriteReview book={bookInfo[0]} />
                     <div classname="review" style={{ marginTop: '20px' }}>
                         <div classname="community" style={{ marginTop: '20px' }}>
                             <div classname="column5" style={{ fontWeight: 'bold' }}>
