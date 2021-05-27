@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import Login from '../modules/auth/components/login';
+import Login from '../modules/auth/components/login';
+import CreateUser from '../modules/auth/components/CreateUser'
 // import Home from '../modules/home/index';
 import { PrivateRoute } from './CombineRoutes';
 import Layout from '../layout/Layout';
-// import { UserManager } from '../modules/auth/components/UserManager';
+//import { UserManager } from '../modules/auth/components/UserManager';
 import ReviewBooks from '../modules/ReviewBooks'
 import BookSearching from '../modules/BookSearching'
 import UserManager from '../modules/UserManager'
@@ -13,6 +14,7 @@ import ReviewedBook from '../modules/ReviewedBook'
 import ReactionHistory from '../modules/ReactionHistory'
 import Home from '../modules/Home'
 import Axios from 'axios'
+import { AuthRoute } from './AuthRoute';
 
 
 const privatePage = [
@@ -43,7 +45,7 @@ export default class Routes extends Component {
         const { auth } = this.props;
         return (
             <React.Fragment>
-                {/* <AuthRoute auth={auth} exact path="/login" component={Login} /> */}
+                <AuthRoute auth={auth} exact path="/login" component={Login} />
                 {
                     privatePage.map(page => (
                         <PrivateRoute

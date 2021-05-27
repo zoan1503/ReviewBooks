@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Rating from 'react-rating'
+//import '../css/screen2_style.css'
 BookInfor.propTypes = {
     bookInfo: PropTypes.object,
 };
@@ -48,18 +49,16 @@ function BookInfor(props) {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="rate1">
-                                    <input type="radio" id="star5" name="rate" defaultValue={5} />
-                                    <label htmlFor="star5" title="text">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" defaultValue={4} />
-                                    <label htmlFor="star4" title="text">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" defaultValue={3} />
-                                    <label htmlFor="star3" title="text">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" defaultValue={2} />
-                                    <label htmlFor="star2" title="text">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" defaultValue={1} />
-                                    <label htmlFor="star1" title="text">1 star</label>
-                                </div>
+                                <Rating
+                                    fractions={2}
+                                    emptySymbol="fa fa-star-o fa high"
+                                    fullSymbol="fa fa-star fa high"
+                                    initialRating={bookInfo && bookInfo.avgRating}
+                                    // onClick={(value) => {
+                                    //     setRating(value)
+                                    //     console.log(rating)
+                                    // }}
+                                />
                             </div>
                         </div>
                         <div className="bookDescription">

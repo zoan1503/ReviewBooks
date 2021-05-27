@@ -63,12 +63,26 @@ function TopReview(props) {
                         <p className="review-area">
                             {item.content_review}
                             <br />
+                            <br/>
+                            <div>
+                                <a class="btn btn-success" href="#" role="button">Like</a>
+                            &nbsp;
+                            <a class="btn btn-warning" href="#" role="button">Dislike</a>
+                            </div>
+                            <br />
                             Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike}
                         </p>
                     </div>
                 )
             })}
         </React.Fragment>
+
+
+
+
+
+
+
     );
 }
 

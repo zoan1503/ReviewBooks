@@ -5,7 +5,7 @@ module.exports = {
 
     get_all_review_book: (req, res) => {
         id_user = req.query.id_user;
-        let sql = 'select books.id_book, book_title, author, description, image_url, review_id, content_review, review.id_user, users.username from books inner join review on books.id_book = review.id_book  inner join users on review.id_user = users.id_user and users.id_user = ?'
+        let sql = 'select books.id_book, book_title, author, description, image_url, review_id, content_review, review.id_user, users.username, rate.avgRating from books inner join review on books.id_book = review.id_book  inner join users on review.id_user = users.id_user and users.id_user = ? left join (SELECT FORMAT(AVG(rating_value), 1) AS avgRating, count(rating_value) as counting, id_book FROM rating GROUP BY id_book ) rate on rate.id_book = books.id_book'
         db.query(sql, [id_user], (err, response) => {
             if (err) throw err
             res.json(response)

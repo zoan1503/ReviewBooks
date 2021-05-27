@@ -31,6 +31,15 @@ export default function Home() {
                             <BookInformation topBook={top5Book[1]} />
                             <BookInformation topBook={top5Book[2]} />
                             <BookInformation topBook={top5Book[3]} />
+                            <BookInformation topBook={top5Book[4]} />
+                            <BookInformation topBook={top5Book[5]} />
+                            <BookInformation topBook={top5Book[6]} />
+                            <BookInformation topBook={top5Book[7]} />
+                            <BookInformation topBook={top5Book[8]} />
+                            <BookInformation topBook={top5Book[9]} />
+                            <BookInformation topBook={top5Book[10]} />
+                            <BookInformation topBook={top5Book[11]} />
+                            <BookInformation topBook={top5Book[12]} />
                         </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>

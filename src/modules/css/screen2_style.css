@@ -1,31 +1,30 @@
 .rate {
     float: left;
     height: 46px;
-    
 }
 .rate:not(:checked) > input {
-    position:absolute;
+    position: absolute;
     /* position: relative; */
-    top:-9999px;
+    top: -9999px;
 }
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+    content: "★ ";
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+    color: #ffc700;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+    color: #deb217;
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
@@ -41,15 +40,15 @@
     display: table;
 }
 
-.column{
+.column {
     float: left;
 }
 
-.leftTopLeftContainer{
+.leftTopLeftContainer {
     width: 25%;
 }
 
-.rightTopLeftContainer{
+.rightTopLeftContainer {
     width: 75%;
 }
 
@@ -59,15 +58,15 @@
     display: table;
 }
 
-.column1{
+.column1 {
     float: left;
 }
 
-.choice2020Image{
+.choice2020Image {
     width: 30%;
 }
 
-.descriptionBook1{
+.descriptionBook1 {
     width: 70%;
 }
 
@@ -77,11 +76,11 @@
     display: table;
 }
 
-.column3{
+.column3 {
     float: left;
 }
 
-.onlineStoresButton{
+.onlineStoresButton {
     padding-left: 30px;
 }
 
@@ -91,35 +90,35 @@
     display: table;
 }
 
-.column4{
+.column4 {
     float: left;
 }
 
-.detailUser{
+.detailUser {
     padding-left: 20px;
 }
 
 .pagination {
     display: inline-block;
-  }
-  
+}
+
 .pagination a {
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-  }
-  
+}
+
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border-radius: 5px;
-  }
-  
+}
+
 .pagination a:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
-  }
+}
 
 .review1::after {
     content: "";
@@ -127,17 +126,16 @@
     display: table;
 }
 
-.column2{
+.column2 {
     float: left;
 }
 
-.editDetails{
+.editDetails {
     float: right;
     text-align: right;
-
 }
 
-.checked{
+.checked {
     color: #c59b08;
 }
 
@@ -147,11 +145,11 @@
     display: table;
 }
 
-.column5{
+.column5 {
     float: left;
 }
 
-.show1-30{
+.show1-30 {
     float: right;
 }
 
@@ -161,7 +159,7 @@
     display: table;
 }
 
-.column6{
+.column6 {
     float: left;
 }
 
@@ -171,18 +169,15 @@
     display: table;
 }
 
-.column7{
+.column7 {
     float: left;
 }
 
-.detailReview{
+.detailReview {
     width: 90%;
     padding-left: 20px;
 }
 
-.userImage{
+.userImage {
     width: 10%;
 }
-
-
-

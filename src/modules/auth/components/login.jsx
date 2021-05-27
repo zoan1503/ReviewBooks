@@ -5,7 +5,7 @@ import { AuthActions } from '../redux/actions';
 
 
 export default class Login extends Component {
-    
+
     constructor(props) {
         super(props);
 
@@ -35,7 +35,7 @@ export default class Login extends Component {
         e.preventDefault();
         var { email, password } = this.state;
         var user = { email, password };
-		this.props.login(user);
+        this.props.login(user);
     }
 
     // forgotPassword(){
@@ -43,20 +43,20 @@ export default class Login extends Component {
     //     this.props.forgotPassword(emailForgot);
     // }
 
-    render() { 
+    render() {
         const { auth } = this.props;
-        return ( 
+        return (
             <div className="hold-transition login-page" style={{ minHeight: '50vh' }}>
                 <div className="login-box" >
                     <div className="login-logo">
                         <a href="/index2.html"><b></b>Đăng nhập</a>
                     </div>
-                    <div className="card"> 
+                    <div className="card">
                         <div className="card-body login-card-body">
-                            <p className="login-box-msg">Sign in to start your session</p>
-                            <form onSubmit={this.handleSubmit}> 
+                            <p className="login-box-msg">Sign in to start</p>
+                            <form onSubmit={this.handleSubmit}>
                                 <div className="input-group mb-3">
-                                    <input name="email" onChange={this.handleChange} type="email" className="form-control" placeholder={ "Email" } required/>
+                                    <input name="email" onChange={this.handleChange} type="email" className="form-control" placeholder={"Tài khoản"} required />
                                     <span className="glyphicon glyphicon-envelope form-control-feedback" />
                                     <div className="input-group-append">
                                         <div className="input-group-text">
@@ -65,7 +65,7 @@ export default class Login extends Component {
                                     </div>
                                 </div>
                                 <div className="input-group mb-3">
-                                    <input name="password" onChange={this.handleChange} type="password" className="form-control" placeholder={ "Password"} required/>
+                                    <input name="password" onChange={this.handleChange} type="password" className="form-control" placeholder={"Mật khẩu"} required />
                                     <span className="glyphicon glyphicon-lock form-control-feedback" />
                                     <div className="input-group-append">
                                         <div className="input-group-text">
@@ -76,32 +76,30 @@ export default class Login extends Component {
                                 <div className="row">
                                     <div className="col-8">
                                         <div className="icheck-primary">
-                                            <input type="checkbox" id="remember"/>
+                                            <input type="checkbox" id="remember" />
                                             <label for="remember">
                                                 Remember Me
                                             </label>
                                         </div>
                                     </div>
                                     <div className="col-4">
-                                            <button className="btn btn-primary btn-block">Sign In</button>
+                                        <button className="btn btn-primary btn-block">Sign In</button>
                                     </div>
                                 </div>
                             </form>
-                            <p className="mb-1">
-                                <a href="forgot-password.html">I forgot my password</a>
-                            </p>
-                            
+
+
                         </div>
 
                     </div>
-                    
+
                 </div>
-                </div>
+            </div>
             // </div>
-         );
+        );
     }
 }
- 
+
 // const mapStateToProps = state => {
 //     return state;
 // }

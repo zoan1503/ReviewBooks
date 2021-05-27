@@ -5,11 +5,10 @@ module.exports = {
         const content_review = req.body.content_review;
         const id_user = req.body.id_user;
         const id_book = req.body.id_book;
-
-        const insertQuery = "INSERT INTO review (content_review, id_user, id_book) VALUES('"
-        db.query(insertQuery + content_review + "', " + id_user + ", " + id_book + ")", (err, results) => {
+        let insertQuery = "INSERT INTO review (content_review, id_user, id_book) VALUES('?', ?, ?)"
+        db.query(insertQuery, [content_review, id_user, id_book], (err, results) => {
             if (err) {
-                console.log("insert error");
+                console.log("insert error: ");
                 res.send(err)
             }
             else {
