@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <!-- <link type="text/css" rel="stylesheet" href="screen3_style.css" /> -->
+    <link type="text/css" rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        .avatarImage, .suaThongTin, .doiMatKhau{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .personalInformation, .password{
+    max-width: 786px;
+    width: 70%;
+    margin: 0 auto;
+    
+    justify-content: center;
+        }
+  
+
+        body:after{
+    background-image: linear-gradient(to right, rgb(147, 233, 255), #003cff);
+    top: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+
+        body:after{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 500px;
+        }
+
+
+        @media (max-width: 767px){
+    body:after{
+        height: 150px;
+        width: 300px;
+        }
+}
+    </style>
+</head>
+<body>
+    <div id="thongTinCaNhan" class="container-fluid" style="padding-top: 50px;">
+        <div class= "avatarImage">
+            <img class = "img-fluid rounded-circle" src="https://s.gr-assets.com/assets/nophoto/user/f_225x300-9aa43f0ccc0355209c834d010c65a83b.png" style="max-height: 180px;">
+        </div>
+        <br>
+        <div class= "avatar" style="text-align: center;">
+            <h3>Thông tin cá nhân</h3>
+        </div>
+        <br>
+        <div class = "personalInformation">
+            <div class= "email row" style="padding-bottom: 5px;">
+                <p class = "col-3" style="text-align: right;">Email<span style="color: red;">*</span>:</p>
+                
+                <div class = "card col-9">
+                    <div>
+                        <p>maihuong@gmail.com</p>
+                    </div>
+                        
+                </div>
+                
+                
+            </div>
+            
+            <div class= "hoten row" style="padding-bottom: 5px;">
+                <p class = "col-3" style="text-align: right;">Họ và tên đệm<span style="color: red;">*</span>:</p>
+                
+                <div class = "card col-9">
+                    <div>
+                        <p>Lê</p>
+                    </div>
+                        
+                </div>
+                
+                
+            </div>
+            
+            <div class= "ten row" style="padding-bottom: 5px;">
+                <p class = "col-3" style="text-align: right;">Tên<span style="color: red;">*</span></p>
+                
+                <div class = "card col-9">
+                    <div>
+                        <p>Hương</p>
+                    </div>
+                        
+                </div>
+                
+                
+            </div>
+            
+            <div class= "ngaysinh row" style="padding-bottom: 5px;">
+                <p class = "col-3" style="text-align: right;">Ngày sinh<span style="color: red;">*</span>:</p>
+                
+                <div class = "card col-9">
+                    <div>
+                        <p>03/07/1987</p>
+                    </div>
+                        
+                </div>
+                
+                
+            </div>
+
+
+        </div>
+        <br>
+        <div class = "suaThongTin">
+            <button class = "btn btn-primary">Sửa thông tin</button>
+        </div>
+
+        <br>
+
+        <div style="text-align: center;">
+            <h3>Thay đổi mật khẩu</h3>
+        </div>
+        <br>
+
+        <div class= "container-fluid password">
+            <div class = "row" style="padding-bottom: 5px;">
+                <p style="text-align: right;" class = "col-3 col-sm-3">
+                    Mật khẩu cũ<span style="color: red;">*</span>:
+                </p>
+                <input type = "text" id = "oldPassword" placeholder="Nhập mật khẩu cũ" class = "col-9 col-sm-9 form-control">
+            </div>
+
+            <div class = "row" style="padding-bottom: 5px;">
+                <p style="text-align: right;" class = "col-3 col-sm-3">
+                    Mật khẩu mới<span style="color: red;">*</span>:
+                </p>
+                <input type = "text" id = "pasword1" placeholder="Nhập mật khẩu mới" class= "col-9 col-sm-9 form-control">
+            </div>
+
+            <div class = "row" style="padding-bottom: 5px;">
+                <p style="text-align: right;" class = "col-3 col-sm-3">
+                    Nhập lại mật khẩu mới<span style="color: red;">*</span>:
+                </p>
+                <input type = "text" id = "newPassword" placeholder="Nhập lại mật khẩu mới" class= "col-9 col-sm-9 form-control">
+            </div>
+        </div>
+
+        <div class = "doiMatKhau">
+            <button class = "btn btn-primary">Đổi mật khẩu</button>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
