@@ -13,13 +13,16 @@ export default function ReviewBooks() {
         Axios
             .get('http://localhost:8000/review/getallreview1book', {
                 params: {
-                    'id_book': 22
+                    'id_book': 3
                 }
             })
             .then(response => setBookInfo(response.data));
         //.then(response => console.log(response.data));
 
     }, []);
+    function rerenderAfterComment(newListCmt) {
+        console.log(newListCmt)
+    }
     // useEffect(() => {
     // let bookInfo = [
     //     {
@@ -52,7 +55,7 @@ export default function ReviewBooks() {
             <div className="container">
                 <div className="leftContainer column8">
                     <BookInfo bookInfo={bookInfo[0]} />
-                    <WriteReview book={bookInfo[0]} />
+                    <WriteReview book={bookInfo[0]} onSubmit={rerenderAfterComment} />
                     <div classname="review" style={{ marginTop: '20px' }}>
                         <div classname="community" style={{ marginTop: '20px' }}>
                             <div classname="column5" style={{ fontWeight: 'bold' }}>

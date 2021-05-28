@@ -12,7 +12,6 @@ TopReview.defaultProps = {
 }
 function TopReview(props) {
     const { reviews } = props;
-    console.log(reviews)
     // let bookInfo = [
     //     {
     //         "id_book": 1,
@@ -35,6 +34,12 @@ function TopReview(props) {
     //         "id_user": 6
     //     }
     // ]
+    function handleLike() {
+
+    }
+    function handleDislike() {
+
+    }
     return (
         <React.Fragment>
             {reviews && reviews.map(item => {
@@ -61,11 +66,14 @@ function TopReview(props) {
                         <p className="review-area">
                             {item.content_review}
                             <br />
-                            <br />
                             <div>
-                                <a class="btn btn-success" href="#" role="button">Like</a>
-                            &nbsp;
-                            <a class="btn btn-warning" href="#" role="button">Dislike</a>
+                                <a href="#" className="nav-link">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true" onClick={handleLike}></i>
+                                </a>
+                                {item.likes - item.dislike}
+                                <a href="#" className="nav-link">
+                                    <i class="fa fa-thumbs-down" aria-hidden="true" onClick={handleDislike}></i>
+                                </a>
                             </div>
                             <br />
                             Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike}

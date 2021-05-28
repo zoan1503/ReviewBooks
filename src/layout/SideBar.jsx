@@ -13,8 +13,8 @@ export default class SideBar extends Component {
                                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
                             </div>
                             <div className="info">
-                                <a href="#" className="d-block">Thành</a>
-                                <a href="#abc"><i className="fa fa-circle text-success" /> Online</a>
+
+                                <Link to='/usermanager'>Thành </Link>
                             </div>
 
                         </div>
