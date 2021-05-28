@@ -3,6 +3,7 @@ import BookInformation from '../modules/componentHome/BookInformation'
 import BookInfor from '../modules/componentReviewbook/BookInfor'
 import Axios from 'axios'
 import Rating from 'react-rating'
+import { Link } from 'react-router-dom';
 function ReviewedBook() {
     const [listBook, setListBook] = useState([]);
     useEffect(() => {
@@ -21,9 +22,9 @@ function ReviewedBook() {
                     <div className="topContainer">
                         <div className="leftTopContainer column">
                             <div className="bookImage">
-                                <a>
+                                <Link to='/reviewbooks'>
                                     <img src={item.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="rightTopContainer column">
@@ -31,7 +32,9 @@ function ReviewedBook() {
                                 <div className="detailsAndbutton">
                                     <div className="bookDetails column2">
                                         <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
-                                            {item.book_title}
+                                            <Link to='/reviewbooks'>
+                                                {item.book_title}
+                                            </Link>
                                         </div>
                                         <div style={{ color: 'grey' }}>
                                             {item.author}

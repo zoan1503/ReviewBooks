@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './../css/BookInformation.css'
 import Rating from 'react-rating'
+import { Link } from 'react-router-dom';
 BookInformation.propTypes = {
     topBook: PropTypes.object,
 };
@@ -18,7 +19,9 @@ export default function BookInformation(props) {
                     {topBook.counting} votes
                     </div>
                 <div>
-                    <a href="#"><img src={topBook.image_url} /></a>
+                    <Link to='/reviewbooks'>
+                        <img src={topBook.image_url} />
+                    </Link>
                 </div>
                 <div className="readButton" style={{ textAlign: 'center' }}>
                     <div className="readButton">

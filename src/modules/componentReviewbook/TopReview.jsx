@@ -11,9 +11,6 @@ TopReview.defaultProps = {
     reviews: []
 }
 function TopReview(props) {
-    const [rating, setRating] = useState(5);
-    const [hover, setHover] = useState([5]);
-    const [like, setLike] = useState([]);
     const { reviews } = props;
     console.log(reviews)
     // let bookInfo = [

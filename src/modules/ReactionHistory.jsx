@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
+import { Link } from 'react-router-dom';
 
 function ReactionHistory() {
     const [reaction, setReation] = useState([]);
@@ -19,9 +20,9 @@ function ReactionHistory() {
                     <div className="topContainer">
                         <div className="leftTopContainer column">
                             <div className="bookImage">
-                                <a>
+                                <Link to='/reviewbooks'>
                                     <img src={item.image_url} style={{ width: '85px', height: '150px', marginLeft: '0px' }} />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="rightTopContainer column">
@@ -29,7 +30,9 @@ function ReactionHistory() {
                                 <div className="detailsAndbutton">
                                     <div className="bookDetails column2">
                                         <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '20px' }}>
-                                            {item.book_title}
+                                            <Link to='/reviewbooks'>
+                                                {item.book_title}
+                                            </Link>
                                         </div>
                                         <div style={{ color: 'grey' }}>
                                             {item.author}

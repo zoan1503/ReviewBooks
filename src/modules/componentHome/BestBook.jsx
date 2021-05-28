@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Rating from 'react-rating'
-
+import { Link } from 'react-router-dom';
 BestBook.propTypes = {
     bestBook: PropTypes.object,
 };
@@ -16,10 +16,10 @@ function BestBook(props) {
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
-                        <a>
-                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }}
-                            />
-                        </a>
+                        <Link to='/reviewbooks'>
+                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
+                        </Link>
+
                     </div>
                 </div>
                 <div className="rightTopContainer column">
@@ -31,7 +31,9 @@ function BestBook(props) {
                                     <span style={{ color: 'grey' }}>{bestBook.counting} votes</span>
                                 </div>
                                 <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
-                                    {bestBook.book_title}
+                                    <Link to='/reviewbooks'>
+                                        {bestBook.book_title}
+                                    </Link>
                                 </div>
                                 <div style={{ color: 'grey' }}>
                                     {bestBook.author}

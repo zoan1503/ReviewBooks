@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Rating from 'react-rating'
+import { Link } from 'react-router-dom';
 //import '../css/screen2_style.css'
 BookInfor.propTypes = {
     bookInfo: PropTypes.object,
@@ -16,9 +17,9 @@ function BookInfor(props) {
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
-                        <a>
+                        <Link to='/reviewbooks'>
                             <img src={bookInfo.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="rightTopContainer column">
@@ -54,10 +55,10 @@ function BookInfor(props) {
                                     emptySymbol="fa fa-star-o fa high"
                                     fullSymbol="fa fa-star fa high"
                                     initialRating={bookInfo && bookInfo.avgRating}
-                                    // onClick={(value) => {
-                                    //     setRating(value)
-                                    //     console.log(rating)
-                                    // }}
+                                // onClick={(value) => {
+                                //     setRating(value)
+                                //     console.log(rating)
+                                // }}
                                 />
                             </div>
                         </div>
