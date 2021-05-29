@@ -36,11 +36,11 @@ module.exports = {
         })
     },
 
-    get_last_reaction: (req, res) => {
-        let id_user = req.body.id_user
-        let review_id = req.body.review_id
-        let sql = 'SELECT * FROM review where id_user = ? and review_id = ? '
-        db.query(sql, [id_user, review_id], (err, response) => {
+    get_all_reaction_1book: (req, res) => {
+        let id_user = req.query.id_user
+        let id_book = req.query.id_book
+        let sql = 'SELECT review.review_id, review.id_book, reaction_choice from books inner join review on books.id_book = review.id_book and books.id_book = ? left join (select reaction_choice, id_user, review_id from reaction where id_user = ?) choice on choice.review_id = review.review_id'
+        db.query(sql, [id_book, id_user], (err, response) => {
             if (err) throw err
             res.json(response)
         })

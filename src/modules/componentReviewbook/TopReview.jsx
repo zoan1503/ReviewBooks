@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './../css/screen2_style.css'
 import './comment.css'
@@ -11,34 +11,18 @@ TopReview.defaultProps = {
     reviews: []
 }
 function TopReview(props) {
+    const [disableLike, setdisableLike] = useState(false);
+    const [disableDislike, setdisableDislike] = useState(false);
     const { reviews } = props;
-    // let bookInfo = [
-    //     {
-    //         "id_book": 1,
-    //         "book_title": "Vũ trụ trong vỏ hạt dẻ",
-    //         "author": "Dương Đăng Quang",
-    //         "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
-    //         "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
-    //         "review_id": 1,
-    //         "content_review": "Sách non",
-    //         "id_user": 1
-    //     },
-    //     {
-    //         "id_book": 1,
-    //         "book_title": "Lược sử thời gian",
-    //         "author": "Đỗ Tiến Thành",
-    //         "description": "Nhà sư trẻ tuổi Không Hải, cùng người bạn thân Quất Dật Thế, từ Nhật Bản xa xôi vượt biển tới Đại Đường với tư cách sứ thần sang du học. Vào thời đại đó, Trường An, kinh đô của nhà Đại Đường là nơi nổi tiếng thịnh vượng phồn hoa, tập trung nhiều sắc dân từ khắp nơi đổ về. Như bóng tối luôn song hành cùng ánh sáng, nhiều loài yêu ma quỷ quái cũng bị thu hút về đây. Một con yêu quái mèo đã ám dinh cơ của viên chức dịch họ Lưu và đưa ra lời tiên tri về cái chết của hoàng đế. Tự tin vào vốn kiến thức uyên bác cùng tài ứng biến phi thường của bản thân, Không Hải đã dẫn Quất Dật Thế đến nhà họ Lưu để đương đầu với yêu mèo. Song họ không ngờ, mình đã vô tình dính líu vào một sự kiện lớn làm rung chuyển nhà Đường. Kiệt tác tiểu thuyết truyền kỳ Nhật Bản lấy bối cảnh Trung Hoa mở ra từ đây.",
-    //         "image_url": "http://static.nhanam.com.vn/thumb/0x320/crop/Books/Images/2020/1/7/SQHEFH86.jpg",
-    //         "review_id": 9,
-    //         "content_review": "sách gì hay quá",
-    //         "id_user": 6
-    //     }
-    // ]
-    function handleLike() {
-
+    function handleLike(e) {
+        e.preventDefault();
+        setdisableLike(true);
+        setdisableDislike(false);
     }
-    function handleDislike() {
-
+    function handleDislike(e) {
+        e.preventDefault();
+        setdisableDislike(true);
+        setdisableLike(false);
     }
     return (
         <React.Fragment>
@@ -67,22 +51,23 @@ function TopReview(props) {
                             {item.content_review}
                             <br />
                             <div>
-                                <a href="#" className="nav-link">
-                                    <i class="fa fa-thumbs-up" aria-hidden="true" onClick={handleLike}></i>
-                                </a>
-                                {item.likes - item.dislike}
-                                <a href="#" className="nav-link">
-                                    <i class="fa fa-thumbs-down" aria-hidden="true" onClick={handleDislike}></i>
-                                </a>
+
+                                <button className="fa fa-thumbs-up" aria-hidden="true" onClick={handleLike} disabled={disableLike}></button>
+
+                                <h4 style={{ marginLeft: "10px" }}>
+                                    {item.likes - item.dislike}
+                                </h4>
+
+                                <button class="fa fa-thumbs-down" aria-hidden="true" onClick={handleDislike} disabled={disableDislike} ></button>
+
                             </div>
                             <br />
-                            Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike}
+                            {/* Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike} */}
                         </p>
                     </div>
                 )
             })}
         </React.Fragment>
-
 
 
 

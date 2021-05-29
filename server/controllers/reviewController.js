@@ -32,8 +32,9 @@ module.exports = {
     },
     get_all_review_1book: (req, res) => {
         let id_book = req.query.id_book;
-        let sql = 'select books.id_book, avgRating, book_title, author, description, image_url, review.review_id, content_review, review.id_user, users.username, likes, dislike, rating_value from books inner join review on books.id_book = review.id_book and books.id_book = ? inner join users on review.id_user = users.id_user left join (SELECT review_id, count(case when reaction_choice = 1 then 1 end) as likes, count(case when reaction_choice = 0 then 1 end) as dislike from reaction group by review_id) countt on countt.review_id = review.review_id join (SELECT FORMAT(AVG(rating_value), 1) AS avgRating, count(rating_value) as counting, id_book FROM rating GROUP BY id_book ) rate on rate.id_book = books.id_book left join rating on books.id_book = rating.id_book and users.id_user = rating.id_user'
-        db.query(sql, [id_book], (err, response) => {
+        let id_user = req.query.id_user;
+        let sql = 'select books.id_book, avgRating, book_title, author, description, image_url, review.review_id, content_review, review.id_user, users.username, likes, dislike, rating_value, reaction_choice from books inner join review on books.id_book = review.id_book and books.id_book = ? inner join users on review.id_user = users.id_user left join (SELECT review_id, count(case when reaction_choice = 1 then 1 end) as likes, count(case when reaction_choice = 0 then 1 end) as dislike from reaction group by review_id) countt on countt.review_id = review.review_id left join (SELECT FORMAT(AVG(rating_value), 1) AS avgRating, count(rating_value) as counting, id_book FROM rating GROUP BY id_book ) rate on rate.id_book = books.id_book left join rating on books.id_book = rating.id_book and users.id_user = rating.id_user left join (select reaction_choice, id_user, review_id from reaction where id_user = ?) choice on choice.review_id = review.review_id'
+        db.query(sql, [id_book, id_user], (err, response) => {
             if (err) throw err
             res.json(response)
         })

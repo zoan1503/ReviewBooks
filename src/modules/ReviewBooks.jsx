@@ -13,7 +13,8 @@ export default function ReviewBooks() {
         Axios
             .get('http://localhost:8000/review/getallreview1book', {
                 params: {
-                    'id_book': 3
+                    'id_book': 2,
+                    'id_user': 1
                 }
             })
             .then(response => setBookInfo(response.data));
