@@ -11,18 +11,84 @@ TopReview.defaultProps = {
     reviews: []
 }
 function TopReview(props) {
-    const [disableLike, setdisableLike] = useState(false);
-    const [disableDislike, setdisableDislike] = useState(false);
+    let id_user = 1;
     const { reviews } = props;
-    function handleLike(e) {
-        e.preventDefault();
-        setdisableLike(true);
-        setdisableDislike(false);
+    function handleLike(item) {
+        if (item.reaction_choice === null) {
+            Axios.post('http://localhost:8000/reaction/add', {
+                reaction_choice: 1,
+                id_user: id_user,
+                review_id: item.review_id
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+        }
+        if (item.reaction_choice === 0) {
+            Axios.put('http://localhost:8000/reaction/update', {
+                reaction_choice: 1,
+                id_user: id_user,
+                review_id: item.review_id
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+        }
     }
-    function handleDislike(e) {
-        e.preventDefault();
-        setdisableDislike(true);
-        setdisableLike(false);
+    function handleDislike(item) {
+        if (item.reaction_choice === null) {
+            Axios.post('http://localhost:8000/reaction/add', {
+                reaction_choice: 0,
+                id_user: id_user,
+                review_id: item.review_id
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+        }
+        if (item.reaction_choice === 1) {
+            Axios.put('http://localhost:8000/reaction/update', {
+                reaction_choice: 0,
+                id_user: id_user,
+                review_id: item.review_id
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+        }
+    }
+    function disable(item) {
+        if (item.reaction_choice === null) {
+            return (<div>
+                <button className="fa fa-thumbs-up" aria-hidden="true" onClick={() => handleLike(item)}></button>
+
+                <h4 style={{ marginLeft: "10px" }}>
+                    {item.likes - item.dislike}
+                </h4>
+
+                <button class="fa fa-thumbs-down" aria-hidden="true" onClick={() => handleDislike(item)}></button>
+            </div>)
+        }
+        if (item.reaction_choice === 1) {
+            return (<div>
+                <button className="fa fa-thumbs-up" aria-hidden="true" disabled={true}></button>
+                <h4 style={{ marginLeft: "10px" }}>
+                    {item.likes - item.dislike}
+                </h4>
+
+                <button class="fa fa-thumbs-down" aria-hidden="true" onClick={() => handleDislike(item)}></button>
+            </div>)
+        }
+        if (item.reaction_choice === 0) {
+            return (<div>
+                <button className="fa fa-thumbs-up" aria-hidden="true" onClick={() => handleLike(item)}></button>
+
+                <h4 style={{ marginLeft: "10px" }}>
+                    {item.likes - item.dislike}
+                </h4>
+                <button class="fa fa-thumbs-down" aria-hidden="true" disabled={true}></button>
+            </div>)
+        }
     }
     return (
         <React.Fragment>
@@ -50,17 +116,17 @@ function TopReview(props) {
                         <p className="review-area">
                             {item.content_review}
                             <br />
-                            <div>
-
-                                <button className="fa fa-thumbs-up" aria-hidden="true" onClick={handleLike} disabled={disableLike}></button>
+                            {/* <div>
+                                <button className="fa fa-thumbs-up" aria-hidden="true" onClick={handleLike}></button>
 
                                 <h4 style={{ marginLeft: "10px" }}>
                                     {item.likes - item.dislike}
                                 </h4>
 
-                                <button class="fa fa-thumbs-down" aria-hidden="true" onClick={handleDislike} disabled={disableDislike} ></button>
+                                <button class="fa fa-thumbs-down" aria-hidden="true" onClick={handleDislike}></button>
 
-                            </div>
+                            </div> */}
+                            {disable(item)}
                             <br />
                             {/* Số lượt thích: {item.likes} - Số lượt không thích: {item.dislike} */}
                         </p>

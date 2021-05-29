@@ -6,7 +6,7 @@ module.exports = {
         const id_user = req.body.id_user;
         const review_id = req.body.review_id;
 
-        const insertQuery = "INSERT INTO reaction (content_review, id_user, review_id) VALUES('"
+        const insertQuery = "INSERT INTO reaction (reaction_choice, id_user, review_id) VALUES('"
         db.query(insertQuery + reaction_choice + "', " + id_user + ", " + review_id + ")", (err, results) => {
             if (err) {
                 console.log("insert error");
@@ -48,8 +48,9 @@ module.exports = {
     update: (req, res) => {
         let review_id = req.body.review_id
         let newReaction = req.body.reaction_choice
-        let sql = 'UPDATE reaction SET reaction_choice = ? WHERE review_id = ?'
-        db.query(sql, [newReaction, review_id], (err, response) => {
+        let id_user = req.body.id_user
+        let sql = 'UPDATE reaction SET reaction_choice = ? WHERE review_id = ? and id_user = ?'
+        db.query(sql, [newReaction, review_id, id_user], (err, response) => {
             if (err) throw err
             res.json({ message: 'Update success!' })
         })
