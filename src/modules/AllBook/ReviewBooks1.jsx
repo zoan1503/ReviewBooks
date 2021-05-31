@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import BookInfo from './componentReviewbook/BookInfor'
-import TopReview from './componentReviewbook/TopReview';
-import Comment from './componentReviewbook/Comment'
-import WriteReview from './componentReviewbook/WriteReview'
+import BookInfo from '../componentReviewbook/BookInfor'
+import TopReview from '../componentReviewbook/TopReview';
+
+import WriteReview from '../componentReviewbook/WriteReview'
 import Axios from 'axios'
-import './css/screen2_style.css'
-export default function ReviewBooks() {
+import '../css/screen2_style.css'
+export default function ReviewBooks1() {
 
     const [bookInfo, setBookInfo] = useState([]);
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function ReviewBooks() {
             Axios
                 .get('http://localhost:8000/review/getallreview1book', {
                     params: {
-                        'id_book': 3,
+                        'id_book': 1,
                         'id_user': 1
                     }
                 })

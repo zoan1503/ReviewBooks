@@ -12,6 +12,12 @@ import BookSearching from '../modules/BookSearching'
 import UserManager from '../modules/UserManager'
 import ReviewedBook from '../modules/ReviewedBook'
 import ReactionHistory from '../modules/ReactionHistory'
+import ReviewBooks1 from '../modules/AllBook/ReviewBooks1'
+import ReviewBooks2 from '../modules/AllBook/ReviewBooks2'
+import ReviewBooks3 from '../modules/AllBook/ReviewBooks3'
+import ReviewBooks4 from '../modules/AllBook/ReviewBooks4'
+import ReviewBooks5 from '../modules/AllBook/ReviewBooks5'
+import ReviewBooks6 from '../modules/AllBook/ReviewBooks6'
 import Home from '../modules/Home'
 import Axios from 'axios'
 import { AuthRoute } from './AuthRoute';
@@ -25,7 +31,12 @@ const privatePage = [
     { path: '/usermanager', exact: true, component: () => <UserManager /> },
     { path: '/reviewedbook', exact: true, component: () => <ReviewedBook /> },
     { path: '/reactionhistory', exact: true, component: () => <ReactionHistory /> },
-
+    { path: '/reviewbooks1', exact: true, component: () => <ReviewBooks1 /> },
+    { path: '/reviewbooks2', exact: true, component: () => <ReviewBooks2 /> },
+    { path: '/reviewbooks3', exact: true, component: () => <ReviewBooks3 /> },
+    { path: '/reviewbooks4', exact: true, component: () => <ReviewBooks4 /> },
+    { path: '/reviewbooks5', exact: true, component: () => <ReviewBooks5 /> },
+    { path: '/reviewbooks6', exact: true, component: () => <ReviewBooks6 /> },
 
     // { path: '/subjectmanager', exact: true, component: () => <SubjectManager /> },
     // { path: '/ternmanager', exact: true, component: () => <TernManager /> },

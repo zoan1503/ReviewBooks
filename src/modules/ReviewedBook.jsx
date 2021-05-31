@@ -22,7 +22,7 @@ function ReviewedBook() {
                     <div className="topContainer">
                         <div className="leftTopContainer column">
                             <div className="bookImage">
-                                <Link to='/reviewbooks'>
+                                <Link to={'reviewbooks' + item.id_book}>
                                     <img src={item.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
                                 </Link>
                             </div>
@@ -32,7 +32,7 @@ function ReviewedBook() {
                                 <div className="detailsAndbutton">
                                     <div className="bookDetails column2">
                                         <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
-                                            <Link to='/reviewbooks'>
+                                            <Link to={'reviewbooks' + item.id_book}>
                                                 {item.book_title}
                                             </Link>
                                         </div>

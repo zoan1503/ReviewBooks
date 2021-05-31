@@ -20,7 +20,7 @@ function ReactionHistory() {
                     <div className="topContainer">
                         <div className="leftTopContainer column">
                             <div className="bookImage">
-                                <Link to='/reviewbooks'>
+                                <Link to={'reviewbooks' + item.id_book}>
                                     <img src={item.image_url} style={{ width: '85px', height: '150px', marginLeft: '0px' }} />
                                 </Link>
                             </div>
@@ -30,7 +30,7 @@ function ReactionHistory() {
                                 <div className="detailsAndbutton">
                                     <div className="bookDetails column2">
                                         <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '20px' }}>
-                                            <Link to='/reviewbooks'>
+                                            <Link to={'reviewbooks' + item.id_book}>
                                                 {item.book_title}
                                             </Link>
                                         </div>

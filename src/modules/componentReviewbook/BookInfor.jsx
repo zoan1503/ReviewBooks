@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Rating from 'react-rating'
 import { Link } from 'react-router-dom';
+import Axios from 'axios'
 //import '../css/screen2_style.css'
 BookInfor.propTypes = {
     bookInfo: PropTypes.object,
@@ -11,13 +12,33 @@ BookInfor.defaultProps = {
     },
 }
 function BookInfor(props) {
+    let id_user = 1;
     const { bookInfo } = props;
+    // useEffect(() => {
+    //     const getBookInterval = setInterval(() => {
+    //         Axios
+    //             .get('http://localhost:8000/rating/getrating', {
+    //                 params: {
+    //                     'id_user': id_user,
+    //                     'id_book': bookInfo.id_book,
+    //                 }
+    //             })
+    //             .then(response => console.log(response.data));
+    //     }, 1000);
+    //     // return () => {
+    //     //     //Cleanup
+    //     //     console.log("Clock Cleanup")
+    //     //     clearInterval(getBookInterval)
+    //     // }
+    //     //.then(response => console.log(response.data));
+
+    // }, []);
     return (
         <div>
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
-                        <Link to='/reviewbooks'>
+                        <Link to={'reviewbooks' + bookInfo.id_book}>
                             <img src={bookInfo.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
                         </Link>
                     </div>
@@ -26,39 +47,29 @@ function BookInfor(props) {
                     <div className="Details">
                         <div className="detailsAndbutton">
                             <div className="bookDetails column2">
-                                <div>
-                                    <span style={{ color: 'grey' }}>{bookInfo.counting} votes</span>
-                                </div>
                                 <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
                                     {bookInfo.book_title}
                                 </div>
-                                <div style={{ color: 'grey' }}>
+                                <div style={{ color: 'red' }}>
                                     {bookInfo.author}
                                 </div>
                             </div>
                             <div className="wrapperButton column2">
-                                <div className="readButton">
-                                    <div className="dropdown">
-                                        <button className="dropdown-toggle" type="button" data-toggle="dropdown">Want to read
-                    <span className="caret" /></button>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="#">Want to read</a></li>
-                                            <li><a href="#">Currently read</a></li>
-                                            <li><a href="#">Read</a></li>
-                                            <hr style={{ marginTop: '5px', marginBottom: '5px' }} />
-                                            <div style={{ paddingLeft: '5px' }}>Add New Shelf</div>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <Rating
                                     fractions={2}
                                     emptySymbol="fa fa-star-o fa high"
                                     fullSymbol="fa fa-star fa high"
                                     initialRating={bookInfo && bookInfo.avgRating}
-                                // onClick={(value) => {
-                                //     setRating(value)
-                                //     console.log(rating)
-                                // }}
+                                    onClick={(value) => {
+                                        Axios.post('http://localhost:8000/rating/add', {
+                                            rating_value: value,
+                                            id_user: id_user,
+                                            id_book: bookInfo.id_book
+                                        })
+                                            .then(function (response) {
+                                                console.log(response);
+                                            })
+                                    }}
                                 />
                             </div>
                         </div>

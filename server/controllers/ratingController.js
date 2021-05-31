@@ -27,8 +27,8 @@ module.exports = {
         })
     },
     get_rating: (req, res) => {
-        let id_user = req.body.id_user
-        let id_book = req.body.id_book
+        let id_user = req.query.id_user
+        let id_book = req.query.id_book
         let sql = 'SELECT * FROM rating where id_user = ? and id_book = ? '
         db.query(sql, [id_user, id_book], (err, response) => {
             if (err) throw err

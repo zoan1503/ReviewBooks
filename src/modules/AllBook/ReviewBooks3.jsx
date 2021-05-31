@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import BookInfo from './componentReviewbook/BookInfor'
-import TopReview from './componentReviewbook/TopReview';
-import Comment from './componentReviewbook/Comment'
-import WriteReview from './componentReviewbook/WriteReview'
+import BookInfo from '../componentReviewbook/BookInfor'
+import TopReview from '../componentReviewbook/TopReview';
+
+import WriteReview from '../componentReviewbook/WriteReview'
 import Axios from 'axios'
-import './css/screen2_style.css'
-export default function ReviewBooks() {
+import '../css/screen2_style.css'
+export default function ReviewBooks3() {
 
     const [bookInfo, setBookInfo] = useState([]);
     useEffect(() => {

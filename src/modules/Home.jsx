@@ -16,16 +16,16 @@ export default function Home() {
             <div>
                 <div className="container">
                     <div>
-                        <h1>Best Fiction</h1>
+                        <h1>Best Rating Book</h1>
                         <div className="topScreen">
-                            <div className="column3"><span>New to Goodreads? Get great book recommendations!<a> Start Now</a></span></div>
+                            <div className="column3"><span></span></div>
                         </div>
                     </div>
                     <BestBook bestBook={top5Book[0]} />
                     <hr />
                     <div className="belowContainer">
                         <div className="nominees" style={{ paddingBottom: '20px' }}>
-                            <span>All Nominees . 506,978 votes total</span>
+                            <span>Top 12 Best Rating Book</span>
                         </div>
                         <div className="allNominees" style={{ textAlign: 'center', justifyContent: 'center' }}>
                             <BookInformation topBook={top5Book[1]} />
@@ -43,7 +43,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                        <a href="#" style={{ color: 'grey', fontWeight: 'bold', fontSize: '20px' }}>MYSTERY &amp; THRILLER &gt;</a>
+                        <a href="#" style={{ color: 'grey', fontWeight: 'bold', fontSize: '20px' }}></a>
                     </div>
                 </div>
             </div>

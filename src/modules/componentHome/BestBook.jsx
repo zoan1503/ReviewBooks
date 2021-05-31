@@ -16,22 +16,23 @@ function BestBook(props) {
             <div className="topContainer">
                 <div className="leftTopContainer column">
                     <div className="bookImage">
-                        <Link to='/reviewbooks'>
+                        <Link to={'reviewbooks' + bestBook.id_book}>
                             <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
                         </Link>
 
                     </div>
                 </div>
-                <div className="rightTopContainer column">
+                <div className="rightTopContainer column" style={{ marginRight: '200px' }}>
                     <div className="Details">
                         <div className="detailsAndbutton">
                             <div className="bookDetails column2">
                                 <div>
                                     <span style={{ color: 'orange', fontWeight: 'bold' }}>WINNER</span>
+                                    &nbsp; &nbsp; &nbsp;
                                     <span style={{ color: 'grey' }}>{bestBook.counting} votes</span>
                                 </div>
                                 <div style={{ color: 'blue', fontWeight: 'bold', fontSize: '25px' }}>
-                                    <Link to='/reviewbooks'>
+                                    <Link to={'reviewbooks' + bestBook.id_book}>
                                         {bestBook.book_title}
                                     </Link>
                                 </div>
@@ -40,19 +41,6 @@ function BestBook(props) {
                                 </div>
                             </div>
                             <div className="wrapperButton column2">
-                                <div className="readButton">
-                                    <div className="dropdown">
-                                        <button className="dropdown-toggle" type="button" data-toggle="dropdown">Want to read
-                    <span className="caret" /></button>
-                                        <ul className="dropdown-menu">
-                                            <li><a href="#">Want to read</a></li>
-                                            <li><a href="#">Currently read</a></li>
-                                            <li><a href="#">Read</a></li>
-                                            <hr style={{ marginTop: '5px', marginBottom: '5px' }} />
-                                            <div style={{ paddingLeft: '5px' }}>Add New Shelf</div>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <Rating
                                     fractions={2}
                                     emptySymbol="fa fa-star-o fa high"

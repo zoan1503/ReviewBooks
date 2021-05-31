@@ -14,7 +14,7 @@ function WriteReview(props) {
     const { book, onSubmit } = props;
     const [newListCmt, setnewListCmt] = useState([]);
     let user = {
-        "id_user": 2,
+        "id_user": 1,
         "username": "thanhmoose",
         "password": "123321",
         "fullname": "Thanh Do",
