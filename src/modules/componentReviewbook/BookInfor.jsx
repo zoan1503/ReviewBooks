@@ -39,7 +39,7 @@ function BookInfor(props) {
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div className="bookImage">
                         <Link to={'reviewbooks' + bookInfo.id_book}>
-                            <img src={bookInfo.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
+                            <img src={bookInfo.image_url} style={{ width: '170px', height: '300px', marginTop: '10px' }} />
                         </Link>
                     </div>
                 </div>

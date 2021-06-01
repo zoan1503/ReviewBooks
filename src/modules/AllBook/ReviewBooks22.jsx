@@ -61,6 +61,13 @@ export default function ReviewBooks22() {
 
         <React.Fragment>
             <div className="container">
+                <div>
+                    <h1>Review Sách</h1>
+                    <br />
+                    <div className="topScreen">
+                        <div className="column3"><span></span></div>
+                    </div>
+                </div>
                 <div className="leftContainer column8">
                     <BookInfo bookInfo={bookInfo[0]} />
                     <WriteReview book={bookInfo[0]} onSubmit={rerenderAfterComment} />
