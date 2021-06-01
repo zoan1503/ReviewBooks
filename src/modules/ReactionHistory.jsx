@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 function ReactionHistory() {
     const [reaction, setReation] = useState([]);
+    let id_user = localStorage.getItem('id_user')
     useEffect(() => {
         Axios
             .get("http://localhost:8000/signin/getallreaction", {
                 params: {
-                    'id_user': 1
+                    'id_user': id_user
                 }
             })
             .then(response => setReation(response.data));
@@ -51,12 +52,12 @@ function ReactionHistory() {
                                     <br />
                                     <br />
                                     {item.reviewer}: {item.content_review}
-                                    
+
                                 </div>
-                                
+
                             </div>
                         </div>
-                        
+
                     </div>
                 )
             })}

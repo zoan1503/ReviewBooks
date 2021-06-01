@@ -9,13 +9,14 @@ import './css/screen2_style.css'
 export default function ReviewBooks() {
 
     const [bookInfo, setBookInfo] = useState([]);
+    let id_user = localStorage.getItem('id_user')
     useEffect(() => {
         const getBookInterval = setInterval(() => {
             Axios
                 .get('http://localhost:8000/review/getallreview1book', {
                     params: {
                         'id_book': 3,
-                        'id_user': 1
+                        'id_user': id_user
                     }
                 })
                 .then(response => setBookInfo(response.data));
@@ -64,7 +65,7 @@ export default function ReviewBooks() {
                 <div className="leftContainer column8">
                     <div>
                         <h1>Review Sách</h1>
-                        <br/>
+                        <br />
                         <div className="topScreen">
                             <div className="column3"><span></span></div>
                         </div>

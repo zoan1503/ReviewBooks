@@ -29,8 +29,16 @@ module.exports = {
         })
     },
     get_all_user_info: (req, res) => {
-        username = req.query.username;
-        password = req.query.password;
+        let id_user = req.query.id_user;
+        let sql = 'select * from users where id_user = ?'
+        db.query(sql, [id_user], (err, response) => {
+            if (err) throw err
+            res.json(response)
+        })
+    },
+    check_signin: (req, res) => {
+        let username = req.query.username;
+        let password = req.query.password;
         let sql = 'select * from users where username = ? and password = ?'
         db.query(sql, [username, password], (err, response) => {
             if (err) throw err
@@ -59,7 +67,7 @@ module.exports = {
             console.log(sql)
             if (err) throw err
             res.json({ message: 'Update pass success!', isChanged: 1 })
-        
+
         })
     },
 }

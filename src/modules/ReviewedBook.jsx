@@ -6,11 +6,12 @@ import Rating from 'react-rating'
 import { Link } from 'react-router-dom';
 function ReviewedBook() {
     const [listBook, setListBook] = useState([]);
+    let id_user = localStorage.getItem('id_user')
     useEffect(() => {
         Axios
             .get("http://localhost:8000/signin/getallreviewbook", {
                 params: {
-                    'id_user': 1
+                    'id_user': id_user
                 }
             })
             .then(response => setListBook(response.data));

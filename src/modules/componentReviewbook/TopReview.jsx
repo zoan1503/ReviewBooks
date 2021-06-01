@@ -11,7 +11,7 @@ TopReview.defaultProps = {
     reviews: []
 }
 function TopReview(props) {
-    let id_user = 1;
+    let id_user = localStorage.getItem('id_user')
     const { reviews } = props;
     function handleLike(item) {
         if (item.reaction_choice === null) {

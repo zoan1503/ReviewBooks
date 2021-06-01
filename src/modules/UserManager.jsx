@@ -8,12 +8,12 @@ export default function UserManager() {
     const [oldPass, setoldPass] = useState('');
     const [newPass, setnewPass] = useState('');
     const [confirmPass, setconfirmPass] = useState('');
+    let id_user = localStorage.getItem('id_user')
     useEffect(() => {
         Axios
             .get("http://localhost:8000/signin/getalluserinfo", {
                 params: {
-                    'username': 'quang1',
-                    'password': '123321'
+                    'id_user': id_user
                 }
             })
             .then(response => setUser(response.data[0]));

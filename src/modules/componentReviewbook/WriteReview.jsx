@@ -13,15 +13,7 @@ WriteReview.defaultProps = {
 function WriteReview(props) {
     const { book, onSubmit } = props;
     const [newListCmt, setnewListCmt] = useState([]);
-    let user = {
-        "id_user": 1,
-        "username": "thanhmoose",
-        "password": "123321",
-        "fullname": "Thanh Do",
-        "address": "Ha Noi",
-        "email": "thanh@gmail.com",
-        "age": 19
-    }
+    let id_user = localStorage.getItem('id_user')
     const [review, setReview] = useState('');
     function changeValue(e) {
         setReview(e.target.value);
@@ -30,7 +22,7 @@ function WriteReview(props) {
         e.preventDefault();
         await Axios.post('http://localhost:8000/review/add', {
             content_review: review,
-            id_user: user.id_user,
+            id_user: id_user,
             id_book: book.id_book
         })
             .then(function (response) {

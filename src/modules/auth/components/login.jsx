@@ -36,7 +36,7 @@ export default class Login extends Component {
         var password = this.state.password;
         // this.props.login(user);
         Axios
-            .get("http://localhost:8000/signin/getalluserinfo", {
+            .get("http://localhost:8000/signin/checksignin", {
                 params: {
                     'username': username,
                     'password': password

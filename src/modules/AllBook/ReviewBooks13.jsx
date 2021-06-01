@@ -9,13 +9,14 @@ import '../css/screen2_style.css'
 export default function ReviewBooks13() {
 
     const [bookInfo, setBookInfo] = useState([]);
+    let id_user = localStorage.getItem('id_user')
     useEffect(() => {
         const getBookInterval = setInterval(() => {
             Axios
                 .get('http://localhost:8000/review/getallreview1book', {
                     params: {
                         'id_book': 13,
-                        'id_user': 1
+                        'id_user': id_user
                     }
                 })
                 .then(response => setBookInfo(response.data));
