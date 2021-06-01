@@ -12,9 +12,6 @@ export default class Login extends Component {
         this.state = {
             email: null,
             password: null,
-            emailForgot: null,
-            newPassword: null,
-            confirmNewPassword: null
         };
 
         this.handleChange = this.handleChange.bind(this);

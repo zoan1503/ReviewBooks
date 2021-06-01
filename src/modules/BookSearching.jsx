@@ -39,6 +39,8 @@ export default function BookSearching() {
 
                 <button type="submit" class="btn btn-primary" onClick={submit}>Tìm kiếm</button>
             </form>
+            
+            <hr />
             {listBook.map(list => (<BookInformation topBook={list} />))}
         </React.Fragment>
 

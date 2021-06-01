@@ -17,6 +17,7 @@ export default function Home() {
                 <div className="container">
                     <div>
                         <h1>Best Rating Book</h1>
+                        <br/>
                         <div className="topScreen">
                             <div className="column3"><span></span></div>
                         </div>
@@ -25,7 +26,7 @@ export default function Home() {
                     <hr />
                     <div className="belowContainer">
                         <div className="nominees" style={{ paddingBottom: '20px' }}>
-                            <span>Top 12 Best Rating Book</span>
+                            <span>Top 12 Sách Rating cao khác</span>
                         </div>
                         <div className="allNominees" style={{ textAlign: 'center', justifyContent: 'center' }}>
                             <BookInformation topBook={top5Book[1]} />

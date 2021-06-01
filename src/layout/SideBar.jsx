@@ -19,7 +19,7 @@ export default class SideBar extends Component {
 
                         </div>
                         {/* search form */}
-                        <form action="#" method="get" className="sidebar-form">
+                        {/* <form action="#" method="get" className="sidebar-form">
                             <div className="input-group">
                                 <input type="text" name="q" className="form-control" />
                                 <span className="input-group-btn">
@@ -27,10 +27,11 @@ export default class SideBar extends Component {
                                     </button>
                                 </span>
                             </div>
-                        </form>
+                        </form> */}
                         <nav className="mt-2">
                             <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                                <li className="text-white text-center">MENU</li>
+                                <li className="text-white text-center">MENU LIST</li>
+                                <br/>
                                 <div>
                                     <li className="nav-item has-treeview">
                                         <a href="#" className="nav-link">

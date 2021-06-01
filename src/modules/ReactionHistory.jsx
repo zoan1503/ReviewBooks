@@ -15,6 +15,12 @@ function ReactionHistory() {
     }, []);
     return (
         <React.Fragment>
+            <div>
+                <h1>Lịch sử tương tác</h1>
+                <div className="topScreen">
+                    <div className="column3"><span></span></div>
+                </div>
+            </div>
             {reaction && reaction.map(item => {
                 return (
                     <div className="topContainer">
@@ -45,9 +51,12 @@ function ReactionHistory() {
                                     <br />
                                     <br />
                                     {item.reviewer}: {item.content_review}
+                                    
                                 </div>
+                                
                             </div>
                         </div>
+                        
                     </div>
                 )
             })}

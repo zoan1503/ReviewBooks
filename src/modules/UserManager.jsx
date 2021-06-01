@@ -92,9 +92,9 @@ export default function UserManager() {
                         </div>
                     </div>
                     <br />
-                    <div className="suaThongTin">
+                    {/* <div className="suaThongTin">
                         <button className="btn btn-primary">Sửa thông tin</button>
-                    </div>
+                    </div> */}
                     <br />
                     <div style={{ textAlign: 'center' }}>
                         <h3>Thay đổi mật khẩu</h3>

@@ -35,15 +35,15 @@ function BookInfor(props) {
     // }, []);
     return (
         <div>
-            <div className="topContainer">
-                <div className="leftTopContainer column">
+            <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div className="bookImage">
                         <Link to={'reviewbooks' + bookInfo.id_book}>
                             <img src={bookInfo.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
                         </Link>
                     </div>
                 </div>
-                <div className="rightTopContainer column">
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                     <div className="Details">
                         <div className="detailsAndbutton">
                             <div className="bookDetails column2">
@@ -79,6 +79,9 @@ function BookInfor(props) {
                     </div>
                 </div>
             </div>
+            <br />
+            <br />
+            
         </div>
     );
 }

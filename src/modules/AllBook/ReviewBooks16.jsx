@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import BookInfo from './componentReviewbook/BookInfor'
-import TopReview from './componentReviewbook/TopReview';
-import Comment from './componentReviewbook/Comment'
-import WriteReview from './componentReviewbook/WriteReview'
+import BookInfo from '../componentReviewbook/BookInfor'
+import TopReview from '../componentReviewbook/TopReview';
+
+import WriteReview from '../componentReviewbook/WriteReview'
 import Axios from 'axios'
-import './css/screen2_style.css'
-export default function ReviewBooks() {
+import '../css/screen2_style.css'
+export default function ReviewBooks16() {
 
     const [bookInfo, setBookInfo] = useState([]);
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function ReviewBooks() {
             Axios
                 .get('http://localhost:8000/review/getallreview1book', {
                     params: {
-                        'id_book': 3,
+                        'id_book': 16,
                         'id_user': 1
                     }
                 })
@@ -62,13 +62,6 @@ export default function ReviewBooks() {
         <React.Fragment>
             <div className="container">
                 <div className="leftContainer column8">
-                    <div>
-                        <h1>Review Sách</h1>
-                        <br/>
-                        <div className="topScreen">
-                            <div className="column3"><span></span></div>
-                        </div>
-                    </div>
                     <BookInfo bookInfo={bookInfo[0]} />
                     <WriteReview book={bookInfo[0]} onSubmit={rerenderAfterComment} />
                     <div classname="review" style={{ marginTop: '20px' }}>

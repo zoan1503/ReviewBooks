@@ -18,6 +18,22 @@ import ReviewBooks3 from '../modules/AllBook/ReviewBooks3'
 import ReviewBooks4 from '../modules/AllBook/ReviewBooks4'
 import ReviewBooks5 from '../modules/AllBook/ReviewBooks5'
 import ReviewBooks6 from '../modules/AllBook/ReviewBooks6'
+import ReviewBooks7 from '../modules/AllBook/ReviewBooks7'
+import ReviewBooks8 from '../modules/AllBook/ReviewBooks8'
+import ReviewBooks9 from '../modules/AllBook/ReviewBooks9'
+import ReviewBooks10 from '../modules/AllBook/ReviewBooks10'
+import ReviewBooks11 from '../modules/AllBook/ReviewBooks11'
+import ReviewBooks12 from '../modules/AllBook/ReviewBooks12'
+import ReviewBooks13 from '../modules/AllBook/ReviewBooks13'
+import ReviewBooks14 from '../modules/AllBook/ReviewBooks14'
+import ReviewBooks15 from '../modules/AllBook/ReviewBooks15'
+import ReviewBooks16 from '../modules/AllBook/ReviewBooks16'
+import ReviewBooks17 from '../modules/AllBook/ReviewBooks17'
+import ReviewBooks18 from '../modules/AllBook/ReviewBooks18'
+import ReviewBooks19 from '../modules/AllBook/ReviewBooks19'
+import ReviewBooks20 from '../modules/AllBook/ReviewBooks20'
+import ReviewBooks21 from '../modules/AllBook/ReviewBooks21'
+import ReviewBooks22 from '../modules/AllBook/ReviewBooks22'
 import Home from '../modules/Home'
 import Axios from 'axios'
 import { AuthRoute } from './AuthRoute';
@@ -37,6 +53,22 @@ const privatePage = [
     { path: '/reviewbooks4', exact: true, component: () => <ReviewBooks4 /> },
     { path: '/reviewbooks5', exact: true, component: () => <ReviewBooks5 /> },
     { path: '/reviewbooks6', exact: true, component: () => <ReviewBooks6 /> },
+    { path: '/reviewbooks7', exact: true, component: () => <ReviewBooks7 /> },
+    { path: '/reviewbooks8', exact: true, component: () => <ReviewBooks8 /> },
+    { path: '/reviewbooks9', exact: true, component: () => <ReviewBooks9 /> },
+    { path: '/reviewbooks10', exact: true, component: () => <ReviewBooks10 /> },
+    { path: '/reviewbooks11', exact: true, component: () => <ReviewBooks11 /> },
+    { path: '/reviewbooks12', exact: true, component: () => <ReviewBooks12 /> },
+    { path: '/reviewbooks13', exact: true, component: () => <ReviewBooks13 /> },
+    { path: '/reviewbooks14', exact: true, component: () => <ReviewBooks14 /> },
+    { path: '/reviewbooks15', exact: true, component: () => <ReviewBooks15 /> },
+    { path: '/reviewbooks16', exact: true, component: () => <ReviewBooks16 /> },
+    { path: '/reviewbooks17', exact: true, component: () => <ReviewBooks17 /> },
+    { path: '/reviewbooks18', exact: true, component: () => <ReviewBooks18 /> },
+    { path: '/reviewbooks19', exact: true, component: () => <ReviewBooks19 /> },
+    { path: '/reviewbooks20', exact: true, component: () => <ReviewBooks20 /> },
+    { path: '/reviewbooks21', exact: true, component: () => <ReviewBooks21 /> },
+    { path: '/reviewbooks22', exact: true, component: () => <ReviewBooks22 /> },
 
     // { path: '/subjectmanager', exact: true, component: () => <SubjectManager /> },
     // { path: '/ternmanager', exact: true, component: () => <TernManager /> },

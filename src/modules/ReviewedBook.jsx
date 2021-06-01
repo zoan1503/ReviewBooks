@@ -17,6 +17,12 @@ function ReviewedBook() {
     }, []);
     return (
         <React.Fragment>
+            <div>
+                <h1>Sách đã Review</h1>
+                <div className="topScreen">
+                    <div className="column3"><span></span></div>
+                </div>
+            </div>
             {listBook && listBook.map(item => {
                 return (
                     <div className="topContainer">

@@ -13,16 +13,16 @@ function BestBook(props) {
     const { bestBook } = props;
     return (
         <div>
-            <div className="topContainer">
-                <div className="leftTopContainer column">
+            <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div className="bookImage">
                         <Link to={'reviewbooks' + bestBook.id_book}>
-                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginLeft: '0px' }} />
+                            <img src={bestBook.image_url} style={{ width: '170px', height: '300px', marginTop: '20px' }} />
                         </Link>
 
                     </div>
                 </div>
-                <div className="rightTopContainer column" style={{ marginRight: '200px' }}>
+                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8" >
                     <div className="Details">
                         <div className="detailsAndbutton">
                             <div className="bookDetails column2">
@@ -36,7 +36,7 @@ function BestBook(props) {
                                         {bestBook.book_title}
                                     </Link>
                                 </div>
-                                <div style={{ color: 'grey' }}>
+                                <div style={{ color: 'red' }}>
                                     {bestBook.author}
                                 </div>
                             </div>
@@ -62,5 +62,6 @@ function BestBook(props) {
         </div>
     );
 }
+
 
 export default BestBook;
