@@ -4,12 +4,13 @@ import { getStorage } from '../config';
 
 export const PrivateRoute = ({ links, auth, component: Component, layout: Layout, ...rest }) => (
     <Route {...rest} render={props => {
-        // var logged = getStorage();
-        // if (logged !== null) {
-        //     return <Layout><Component {...props} /></Layout>
-        // } else {
-        //     return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
-        // }
-        return <Layout><Component {...props} /></Layout>
+        var logged = localStorage.getItem('isLogged')
+        console.log(logged)
+        if (logged != null) {
+            return <Layout><Component {...props} /></Layout>
+        } else {
+            return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+        }
+        //return <Layout><Component {...props} /></Layout>
     }} />
 )

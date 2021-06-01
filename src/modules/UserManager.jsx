@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
 import './css/screen3_style.css'
+import swal from 'sweetalert';
 
 export default function UserManager() {
     const [user, setUser] = useState({});
@@ -39,10 +40,20 @@ export default function UserManager() {
                 password: newPass
             })
                 .then(function (response) {
-                    console.log(response);
+                    if (response.data.isChanged) {
+                        swal({
+                            title: "Done!",
+                            text: "Bạn đã đổi mật khẩu thành công",
+                            icon: "success",
+                            button: "Xác nhận",
+                        });
+                    }
+                    //window.location.reload()
+
                 })
         }
     }
+    console.log(localStorage.getItem('id_user'));
     return (
         <React.Fragment>
             <div class="container">

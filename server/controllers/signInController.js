@@ -58,7 +58,8 @@ module.exports = {
         db.query(sql, [newPassword, id_user], (err, response) => {
             console.log(sql)
             if (err) throw err
-            res.json({ message: 'Update user success!' })
+            res.json({ message: 'Update pass success!', isChanged: 1 })
+        
         })
     },
 }
