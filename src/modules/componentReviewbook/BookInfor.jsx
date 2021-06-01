@@ -12,7 +12,7 @@ BookInfor.defaultProps = {
     },
 }
 function BookInfor(props) {
-    let id_user = 1;
+    let id_user = localStorage.getItem('id_user')
     const { bookInfo } = props;
     // useEffect(() => {
     //     const getBookInterval = setInterval(() => {
@@ -81,7 +81,7 @@ function BookInfor(props) {
             </div>
             <br />
             <br />
-            
+
         </div>
     );
 }

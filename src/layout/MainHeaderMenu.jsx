@@ -13,43 +13,48 @@ export default function MainHeaderMenu() {
             })
             .then(response => setUser(response.data[0]));
     }, []);
+    function handleLogout() {
+        localStorage.clear();
+        window.location.href = 'http://localhost:4000/login';
+    }
     return (
+
         <div className="navbar-custom-menu">
             <ul className="nav navbar-nav">
-                <li>
-
-                </li>
                 <li className="dropdown user user-menu">
                     <a href="#abc" className="dropdown-toggle" data-toggle="dropdown">
                         <img src="dist/img/user2-160x160.jpg" className="user-image" alt="User Avatar" />
-                        <span className="hidden-xs" style={{ color: "white    " }}> {user.username}</span>
+                        <span className="hidden-xs" style={{ color: "white" }}> {user.username}</span>
                     </a>
-                    <ul className="dropdown-menu">
-                        {/* User image */}
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <a href='/login' style={{ color: 'white', textDecoration: 'underline'}} onClick={handleLogout} >Đăng xuất</a>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    {/* <ul className="dropdown-menu">
+
                         <li className="user-header">
                             <img src="dist/img/user2-160x160.jpg" className="img-circle" alt="User Avatar" />
                             <p cl>
-                                Thành
-                                    <small>thanhdt@gmail.com</small>
+                                {user.fullname}
+                                <small>{user.email}</small>
                             </p>
                         </li>
                         <li className="user-footer">
                             <div className="row">
-                                {/* <div className="col-sm-6">
-                                        <a href="#abc" className="btn btn-default btn-flat">Hồ sơ</a>
-                                    </div> */}
+
                                 <div className="col-sm-4"></div>
                                 <div className="col-sm-6">
-                                    <button type="button" className="btn btn-default btn-flat">Đăng xuất</button>
+                                    <button type="button" className="btn btn-default btn-flat" onClick={handleLogout}>Đăng xuất</button>
                                 </div>
                             </div>
                         </li>
-                    </ul>
+                    </ul> */}
                 </li>
 
-
             </ul>
-
         </div>
     );
 

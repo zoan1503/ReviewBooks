@@ -48,7 +48,7 @@ export default function UserManager() {
                             button: "Xác nhận",
                         });
                     }
-                    //window.location.reload()
+                    window.location.reload()
 
                 })
         }

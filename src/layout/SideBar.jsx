@@ -57,16 +57,16 @@ export default function SideBar() {
                                     </a>
                                 </li>
 
-                                <li className="nav-item has-treeview">
+                                {/* <li className="nav-item has-treeview">
                                     <a href="#" className="nav-link">
                                         <i className="nav-icon fa fa-book" />
-                                        {/* <span>Review Sách</span> */}
+
                                         <Link to='/reviewbooks'>
                                             <span>&nbsp;Review Sách</span>
                                         </Link>
-                                        {/* <i className="right fa fa-angle-left"></i> */}
+
                                     </a>
-                                </li>
+                                </li> */}
 
                                 <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
