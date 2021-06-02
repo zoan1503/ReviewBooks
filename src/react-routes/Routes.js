@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from '../modules/auth/components/login';
-import CreateUser from '../modules/auth/components/CreateUser'
+import SignUp from '../modules/auth/components/SignUp'
 // import Home from '../modules/home/index';
 import { PrivateRoute } from './CombineRoutes';
 import Layout from '../layout/Layout';
@@ -40,6 +40,7 @@ import { AuthRoute } from './AuthRoute';
 
 
 const privatePage = [
+    { path: '/signup', exact: true, component: () => <SignUp /> },
     { path: '/', exact: true, component: () => <Home /> },
     { path: '/home', exact: true, component: () => <Home /> },
     { path: '/reviewbooks', exact: true, component: () => <ReviewBooks /> },

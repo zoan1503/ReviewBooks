@@ -18,7 +18,7 @@ module.exports = {
                 res.send(err)
             }
             else {
-                res.send({ error: false, data: results, message: 'user has been add successfully!' });
+                res.send({ error: false, data: results, message: 'user has been add successfully!', isSignUp: 1 });
             }
 
         });

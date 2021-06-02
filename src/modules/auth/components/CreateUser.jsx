@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AuthActions } from '../redux/actions';
+
 class CreateUser extends Component {
     constructor(props) {
         super(props);

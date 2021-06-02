@@ -4,7 +4,7 @@ import { AuthActions } from '../redux/actions';
 import Axios from 'axios'
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
-
+import SignUp from './SignUp'
 export default class Login extends Component {
 
     constructor(props) {
@@ -68,6 +68,9 @@ export default class Login extends Component {
     //     const { emailForgot } = this.state;
     //     this.props.forgotPassword(emailForgot);
     // }
+    handleSignUp() {
+        localStorage.setItem('isLogged', 0)
+    }
 
     render() {
         const { auth } = this.props;
@@ -101,16 +104,17 @@ export default class Login extends Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-8">
-                                        <div className="icheck-primary">
+                                    <div className="col-7">
+                                        {/* <div className="icheck-primary">
                                             <input type="checkbox" id="remember" />
                                             <label for="remember">
                                                 Remember Me
                                             </label>
-                                        </div>
+                                        </div> */}
+                                        <a href = '/signup' onClick={this.handleSignUp}>Đăng ký</a>
                                     </div>
-                                    <div className="col-4">
-                                        <button className="btn btn-primary btn-block">Sign In</button>
+                                    <div className="col-5">
+                                        <button className="btn btn-primary btn-block">Đăng nhập</button>
                                     </div>
                                 </div>
                             </form>
