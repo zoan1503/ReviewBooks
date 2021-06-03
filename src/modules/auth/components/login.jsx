@@ -78,11 +78,11 @@ export default class Login extends Component {
             <div className="hold-transition login-page" style={{ minHeight: '50vh' }}>
                 <div className="login-box" >
                     <div className="login-logo">
-                        <a href="/index2.html"><b></b>Đăng nhập</a>
+                        <a href="/index2.html"><b></b>Review Sách</a>
                     </div>
                     <div className="card">
                         <div className="card-body login-card-body">
-                            <p className="login-box-msg">Sign in to start</p>
+                            <p className="login-box-msg">Đăng nhập để bắt đầu!</p>
 
                             <form onSubmit={this.handleSubmit}>
                                 <div className="input-group mb-3">
@@ -104,14 +104,14 @@ export default class Login extends Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-7">
+                                    <div className="col-7" style = {{marginTop: '4px'}} >
                                         {/* <div className="icheck-primary">
                                             <input type="checkbox" id="remember" />
                                             <label for="remember">
                                                 Remember Me
                                             </label>
                                         </div> */}
-                                        <a href = '/signup' onClick={this.handleSignUp}>Đăng ký</a>
+                                        <a href = '/signup' style = {{marginLeft: '10px', textDecoration: 'underline'}} onClick={this.handleSignUp}>Đăng ký</a>
                                     </div>
                                     <div className="col-5">
                                         <button className="btn btn-primary btn-block">Đăng nhập</button>

@@ -29,13 +29,14 @@ function WriteReview(props) {
                 setnewListCmt(response);
             })
         onSubmit(newListCmt);
+        setReview('');
     }
     return (
         <div>
             <form action="" method="POST" role="form" onSubmit={submit}>
                 <legend>Viết đánh giá của bạn tại đây</legend>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="" placeholder="Review..." onChange={(e) => changeValue(e)} />
+                    <input type="text" class="form-control" value= {review} placeholder="Review..." onChange={(e) => changeValue(e)} />
                 </div>
                 <button type="submit" class="btn btn-primary" >Gửi</button>
             </form>
